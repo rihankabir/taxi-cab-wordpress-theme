@@ -7,6 +7,7 @@
   <?php wp_head(); ?>
 </head>
 <body  <?php body_class(); ?>>
+    <?php wp_body_open(); ?>
   <!--loader-->
   <div id="loader">
     <div class="spinner"></div>
@@ -950,21 +951,6 @@ No matter if you are an individual or a group of people, large or small, busines
   </div>
 </section>
 <!--bottom footer section ends-->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
