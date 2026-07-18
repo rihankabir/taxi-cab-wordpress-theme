@@ -45,6 +45,13 @@ function mytheme_assets() {
         array(),
         '2.3.1'
     );
+      wp_enqueue_style(
+        'theme-style',
+        get_stylesheet_uri(),
+        array(),
+        '1.0.0'
+    );
+
 
     wp_enqueue_style(
         'main-style',
@@ -98,3 +105,7 @@ add_action(
     'wp_enqueue_scripts',
     'mytheme_assets'
 );
+
+
+
+?>
