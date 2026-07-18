@@ -4,11 +4,9 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>TAXI CAB</title>
-    
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-	<script src="https://kit.fontawesome.com/e0e130f4dc.js" crossorigin="anonymous"></script>
+  <?php wp_head(); ?>
 </head>
-<body>
+<body  <?php body_class(); ?>>
   <!--loader-->
   <div id="loader">
     <div class="spinner"></div>
@@ -1002,10 +1000,6 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="js/jquery-3.7.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/script.js"></script>
+    <?php wp_footer(); ?>
     </body>
 </html>
