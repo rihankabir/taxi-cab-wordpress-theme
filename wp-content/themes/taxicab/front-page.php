@@ -6,9 +6,12 @@
 	<title>TAXI CAB</title>
   <?php wp_head(); ?>
 </head>
+
 <body  <?php body_class(); ?>>
+
     <?php wp_body_open(); ?>
   <!--loader-->
+  
   <div id="loader">
     <div class="spinner"></div>
 </div>

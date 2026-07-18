@@ -1,6 +1,20 @@
 /*====================================
     CUSTOM SLIDER
 ====================================*/
+$(document).ready(function () {
+$(window).on("load", function(){
+
+    $("#loader").fadeOut();
+
+});
+});
+
+
+
+
+
+
+
 
 const slider = document.querySelector(".custom-slider");
 const track = document.querySelector(".slider-track");
@@ -303,11 +317,7 @@ $('.testimonial_prev').click(function(){
 
 });
 
-$(window).on("load", function(){
 
-    $("#loader").fadeOut();
-
-});
 
 
 
@@ -370,3 +380,32 @@ $(".successmsg").text("");
     });
 
 
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const toggle = document.getElementById("searchToggle");
+    const box = document.getElementById("searchBox");
+    const input = document.getElementById("searchInput");
+
+    toggle.addEventListener("click", function (e) {
+        e.preventDefault();
+        box.style.display = (box.style.display === "block") ? "none" : "block";
+        input.focus();
+    });
+
+    input.addEventListener("keyup", function () {
+        let value = this.value.toLowerCase();
+        let elements = document.querySelectorAll("h1, h2, h3, p");
+
+        elements.forEach(el => {
+            let text = el.innerText.toLowerCase();
+
+            if (value && text.includes(value)) {
+                el.style.background = "yellow";
+            } else {
+                el.style.background = "";
+            }
+        });
+    });
+
+});
