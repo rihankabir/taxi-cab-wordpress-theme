@@ -947,7 +947,7 @@ No matter if you are an individual or a group of people, large or small, busines
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
-        <p class="ftxt text-center ><span class="f2txt"></span>© 2026 Taxi Cab. All Rights Reserved.</p>
+        <p class="ftxt text-center "><span class="f2txt"></span>© 2026 Taxi Cab. All Rights Reserved.</p>
       </div>
     </div>
   </div>
