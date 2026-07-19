@@ -1,20 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html <?php language_attributes(); ?>>
 <head>
-	<meta charset="utf-8">
+	<meta charset="<?php bloginfo('charset'); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>TAXI CAB</title>
+
   <?php wp_head(); ?>
 </head>
 
 <body  <?php body_class(); ?>>
 
-    <?php wp_body_open(); ?>
+
   <!--loader-->
   
-  <div id="loader">
-    <div class="spinner"></div>
-</div>
+  
 <!--loader end-->
 <!-- =========================
      TOP HEADER START
@@ -953,6 +952,10 @@ No matter if you are an individual or a group of people, large or small, busines
     </div>
   </div>
 </section>
+
+<div id="loader">
+    <div class="spinner"></div>
+</div>
 <!--bottom footer section ends-->
 
 
