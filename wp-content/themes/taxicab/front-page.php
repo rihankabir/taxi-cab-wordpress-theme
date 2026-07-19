@@ -81,7 +81,7 @@
 <!--navbar start-->
 <nav class="navbar navbar-expand-lg  custom-navbar sticky-top">
   <div class="container">
-    <a class="navbar-brand" href="index.html"><img src="images/site logo.png" class="img-fluid"> </a>
+    <a class="navbar-brand" href="index.html"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/site logo.png" class="img-fluid"> </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -142,7 +142,7 @@
         <!-- SLIDE 1 -->
         <div class="carousel-item active">
 
-            <img src="images/hero slider4.jpg"
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/hero slider4.jpg"
                  class="d-block w-100 slider-img"
                  alt="Slider Image">
 
@@ -172,7 +172,7 @@
         <!-- SLIDE 2 -->
         <div class="carousel-item">
 
-            <img src="images/hero slider2.jpg"
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/hero slider2.jpg"
                  class="d-block w-100 slider-img"
                  alt="Slider Image">
 
@@ -203,7 +203,7 @@
  <!-- SLIDE 3 -->
         <div class="carousel-item">
 
-            <img src="images/hero slider5.jpg"
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/hero slider5.jpg"
                  class="d-block w-100 slider-img"
                  alt="Slider Image">
 
@@ -269,7 +269,7 @@
 <div class="container">
     <div class="row">
 <div class="col-lg-6 col-md-6">
-    <img src="images/taxi about.jpg" class="img-fluid rounded w-100 about-img" alt="about us image">
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/taxi about.jpg" class="img-fluid rounded w-100 about-img" alt="about us image">
 </div>
 <div class="col-lg-6 col-md-6">
     <h2 class="text-start about-txt">ABOUT US</h2>
@@ -388,7 +388,7 @@ No matter if you are an individual or a group of people, large or small, busines
       <div class="col-lg-3 col-md-6">
         <div class="tariff-card">
 
-          <img src="images/taxi11.jpg" alt="taxi">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/taxi11.jpg" alt="taxi">
 
           <h3>STANDARD</h3>
 
@@ -406,7 +406,7 @@ No matter if you are an individual or a group of people, large or small, busines
       <div class="col-lg-3 col-md-6">
         <div class="tariff-card">
 
-          <img src="images/taxi12.jpg" alt="taxi">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/taxi12.jpg" alt="taxi">
 
           <h3>BUSINESS</h3>
 
@@ -429,7 +429,7 @@ No matter if you are an individual or a group of people, large or small, busines
             <i class="fa-solid fa-star"></i>
           </div>
 
-          <img src="images/taxi13.jpg" alt="vip">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/taxi13.jpg" alt="vip">
 
           <h3>VIP</h3>
 
@@ -448,7 +448,7 @@ No matter if you are an individual or a group of people, large or small, busines
       <div class="col-lg-3 col-md-6">
         <div class="tariff-card">
 
-          <img src="images/taxi14.jpg" alt="minivan">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/taxi14.jpg" alt="minivan">
 
           <h3>BUS-MINIVAN</h3>
 
@@ -512,7 +512,7 @@ No matter if you are an individual or a group of people, large or small, busines
 
 </div>
 <div class="col-md-4">
-  <img src="images/taxiapp.png" alt="taxi cab mobile app" class="img-fluid mt-3 w-100" data-aos="fade-up">
+  <img src="<?php echo get_template_directory_uri(); ?>/assets/images/taxiapp.png" alt="taxi cab mobile app" class="img-fluid mt-3 w-100" data-aos="fade-up">
 </div>
 <div class="col-md-4">
 
@@ -669,7 +669,7 @@ No matter if you are an individual or a group of people, large or small, busines
   </div>
 <div class="col-lg-5 col-md-5 col-12  d-flex justify-content-center align-items-center text-center">
   <div class="car mt-5" data-aos="fade-left">
-    <img src="images/car section promo.jpg" class="w-100 rounded">
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/car section promo.jpg" class="w-100 rounded">
   </div>
 </div>
 </div>
@@ -684,7 +684,7 @@ No matter if you are an individual or a group of people, large or small, busines
 <div class="owl-carousel testimonial-slider mt-5">
 
     <div class="testimonial">
-    <img src="images/testimonial client1.jpg" alt="Client" class="img-fluid">
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/testimonial client1.jpg" alt="Client" class="img-fluid">
 
     <h4>John Doe</h4>
 
@@ -700,7 +700,7 @@ No matter if you are an individual or a group of people, large or small, busines
 </div>
 
     <div class="testimonial">
-    <img src="images/testimonial client2.jpg" alt="Client" class="img-fluid">
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/testimonial client2.jpg" alt="Client" class="img-fluid">
 
     <h4>John Doe</h4>
 
@@ -716,7 +716,7 @@ No matter if you are an individual or a group of people, large or small, busines
 </div>
 
     <div class="testimonial">
-    <img src="images/testimonial client3.jpg" alt="Client" class="img-fluid">
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/testimonial client3.jpg" alt="Client" class="img-fluid">
 
     <h4>John Doe</h4>
 
@@ -742,7 +742,7 @@ No matter if you are an individual or a group of people, large or small, busines
 <div class="col-lg-6 col-md-6 col-12">
   <div class="promo-banner">
 
-    <img src="images/promo1.jpg" alt="promo banner" class="img-fluid rounded">
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/promo1.jpg" alt="promo banner" class="img-fluid rounded">
 
     <div class="hero-content">
         <h1 class="text promotxts"><span class="worldtxt">-50%</span> ON FIRST ORDER</h1>
@@ -754,7 +754,7 @@ No matter if you are an individual or a group of people, large or small, busines
 <div class="col-lg-6 col-md-6 col-12">
   <div class="promo-banner">
 
-    <img src="images/promo2.jpg" alt="promo banner" class="img-fluid rounded">
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/promo2.jpg" alt="promo banner" class="img-fluid rounded">
 
     <div class="hero-content">
         <h1 class="text-center cartxt">Business Car Rental</h1>
@@ -793,31 +793,31 @@ No matter if you are an individual or a group of people, large or small, busines
 
                     <div class="col-6 col-sm-4 col-md-4 col-lg">
                         <div class="brand-item">
-                            <img src="images/brand1.jpg" class="img-fluid" alt="Brand 1">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/brand1.jpg" class="img-fluid" alt="Brand 1">
                         </div>
                     </div>
 
                     <div class="col-6 col-sm-4 col-md-4 col-lg">
                         <div class="brand-item">
-                            <img src="images/brand2.jpg" class="img-fluid" alt="Brand 2">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/brand2.jpg" class="img-fluid" alt="Brand 2">
                         </div>
                     </div>
 
                     <div class="col-6 col-sm-4 col-md-4 col-lg">
                         <div class="brand-item">
-                            <img src="images/brand3.jpg" class="img-fluid" alt="Brand 3">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/brand3.jpg" class="img-fluid" alt="Brand 3">
                         </div>
                     </div>
 
                     <div class="col-6 col-sm-4 col-md-4 col-lg">
                         <div class="brand-item">
-                            <img src="images/brand4.jpg" class="img-fluid" alt="Brand 4">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/brand4.jpg" class="img-fluid" alt="Brand 4">
                         </div>
                     </div>
 
                     <div class="col-6 col-sm-4 col-md-4 col-lg">
                         <div class="brand-item">
-                            <img src="images/brand5.jpg" class="img-fluid" alt="Brand 5">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/brand5.jpg" class="img-fluid" alt="Brand 5">
                         </div>
                     </div>
 

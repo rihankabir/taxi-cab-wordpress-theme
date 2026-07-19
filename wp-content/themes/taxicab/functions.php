@@ -21,6 +21,8 @@ add_action( 'after_setup_theme', 'taxi_cab_setup' );
 
 
 function taxi_assets(){
+ wp_enqueue_style( 'bootstrap_css', get_template_directory_uri() . '/assets/css/bootstrap.css', array(),'5.0.3', 'all' );
+
  wp_enqueue_style( 'bootstrap_css', get_template_directory_uri() . '/assets/css/bootstrap.min.css', array(),'5.0.3', 'all' );
  wp_enqueue_style( 'aos_css', get_template_directory_uri() . '/assets/aos/aos.css', array(),'', 'all' );
  wp_enqueue_style(
@@ -55,8 +57,10 @@ wp_enqueue_style( 'theme_css', get_template_directory_uri() );
     '2.3.4',
     true
 );
-wp_enqueue_script( 'bootstrap_js', get_template_directory_uri() . '/assets/js/js/bootstrap.bundle.min.js', array(), '1.0.0', true );
+
+
 wp_enqueue_script( 'aos_js', get_template_directory_uri() . '/assets/aos/aos.js', array(), '1.0.0', true );
+wp_enqueue_script( 'bootstrap_js', get_template_directory_uri() . '/assets/js/bootstrap.bundle.min.js', array(), '5.0.3', true );
    wp_enqueue_script( 'script_js', get_template_directory_uri() . '/assets/js/script.js', array(), '', true );
 }
 add_action('wp_enqueue_scripts','taxi_assets');
