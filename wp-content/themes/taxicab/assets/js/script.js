@@ -1,19 +1,3 @@
-/*====================================
-    CUSTOM SLIDER
-====================================*/
-
-$(window).on("load", function(){
-
-    $("#loader").fadeOut();
-
-});
-
-
-
-
-
-
-
 
 
 const slider = document.querySelector(".custom-slider");
@@ -409,3 +393,11 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
+
+
+$(window).on("load", function(){
+
+    $("#loader").fadeOut();
+
+});
+
