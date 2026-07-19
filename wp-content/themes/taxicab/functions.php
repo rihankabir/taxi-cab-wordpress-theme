@@ -47,7 +47,7 @@ wp_enqueue_style( 'theme_css', get_template_directory_uri() );
 
 
 
- wp_enqueue_script( 'jquery_js', get_template_directory_uri() . '/assets/js/jquery-3.7.1.min.js', array(), '3.7.1', true );
+ wp_enqueue_script( 'jquery_js', get_template_directory_uri() . '/assets/js/jquery-3.7.1.min.js', array(), '1.0.0', true );
  wp_enqueue_script(
     'owl-carousel',
     get_template_directory_uri() . '/assets/js/owl.carousel.min.js',

@@ -953,11 +953,11 @@ No matter if you are an individual or a group of people, large or small, busines
   </div>
 </section>
 
-<!--
+
 <div id="loader">
     <div class="spinner"></div>
 </div>
--->
+
 <!--bottom footer section ends-->
 
 
