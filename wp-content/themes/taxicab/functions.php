@@ -13,7 +13,8 @@ function taxi_cab_setup() {
     register_nav_menus(
         array(
             'primary_menu' => 'Primary Menu',
-            'footer_menu'  => 'Footer Menu',
+            'footer_menu_1'  => 'Footer Menu 1',
+            'footer_menu_2' => 'Footer Menu 2',
         )
     );
 
