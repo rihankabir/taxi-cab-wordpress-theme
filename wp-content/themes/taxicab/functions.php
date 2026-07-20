@@ -45,7 +45,7 @@ add_filter( 'nav_menu_link_attributes', 'taxi_cab_nav_link_class', 10, 3 );
 // Added Bootstrap nav-item class
 
 /**
- * Add Bootstrap nav-item class to menu items.
+ * Added Bootstrap nav-item class to menu items.
  *
  * @param array    $classes
  * @param WP_Post  $item
