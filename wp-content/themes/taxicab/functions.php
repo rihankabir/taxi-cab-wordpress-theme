@@ -16,7 +16,34 @@ function taxi_cab_setup() {
             'footer_menu'  => 'Footer Menu',
         )
     );
+// Add Bootstrap nav-link class to menu links
+function taxi_cab_nav_link_class( $atts, $item, $args ) {
 
+    if ( $args->theme_location === "primary_menu" ) {
+
+        $atts["class"] = "nav-link";
+
+    }
+
+    return $atts;
+
+}
+add_filter( "nav_menu_link_attributes", "taxi_cab_nav_link_class", 10, 3 );
+
+
+// Addrd Bootstrap nav-item class to menu items
+function taxi_cab_nav_item_class( $classes, $item, $args ) {
+
+    if ( $args->theme_location === "primary_menu" ) {
+
+        $classes[] = "nav-item";
+
+    }
+
+    return $classes;
+
+}
+add_filter( "nav_menu_css_class", "taxi_cab_nav_item_class", 10, 3 );
 }
 add_action( 'after_setup_theme', 'taxi_cab_setup' );
 
@@ -24,8 +51,8 @@ add_action( 'after_setup_theme', 'taxi_cab_setup' );
 
 
 function taxi_assets(){
- wp_enqueue_style( 'bootstrap_css', get_template_directory_uri() . '/assets/css/bootstrap.css', array(),'5.0.3', 'all' );
 
+ wp_enqueue_style( 'bootstrap_css', get_template_directory_uri() . '/assets/css/bootstrap.css', array(),'5.0.3', 'all' );
  wp_enqueue_style( 'bootstrap_css', get_template_directory_uri() . '/assets/css/bootstrap.min.css', array(),'5.0.3', 'all' );
  wp_enqueue_style( 'aos_css', get_template_directory_uri() . '/assets/aos/aos.css', array(),'', 'all' );
  wp_enqueue_style(

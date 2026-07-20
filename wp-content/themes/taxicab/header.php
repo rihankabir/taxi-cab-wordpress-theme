@@ -99,10 +99,10 @@ the_custom_logo();
       <?php 
       wp_nav_menu(
 array(
-    'theme_location' => 'primary_menu',
-    'container' => 'false',
+    'theme_location'=>'primary_menu',
+    'container'=>false,
     'menu_class'=>'navbar-nav ms-auto mb-2 gap-5 mb-lg-0',
-    'fallback_cb'    => false,
+    'fallback_cb'=> false,
 )
 
       );
