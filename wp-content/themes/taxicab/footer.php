@@ -29,50 +29,32 @@
 
         <div class="col-6">
 
-          <ul class="nav flex-column">
-
-            <li class="nav-item mb-2">
-              <a class="nav-link neolink p-0" href="#">GET TAXI</a>
-            </li>
-
-            <li class="nav-item mb-2">
-              <a class="nav-link neolink p-0" href="#">SERVICES</a>
-            </li>
-
-            <li class="nav-item mb-2">
-              <a class="nav-link neolink p-0" href="#">TARIFFS</a>
-            </li>
-
-            <li class="nav-item mb-2">
-              <a class="nav-link neolink p-0" href="#">APPLICATION</a>
-            </li>
-
-          </ul>
+          <?php 
+          wp_nav_menu(
+              array(
+        'theme_location' => 'footer_menu_1',
+        'container'      => false,
+        'menu_class'     => 'nav flex-column',
+        'fallback_cb'    => false,
+    )
+          );
+          
+          
+          ?>
 
         </div>
 
         <div class="col-6">
-
-          <ul class="nav flex-column">
-
-            <li class="nav-item mb-2">
-              <a class="nav-link neolink p-0" href="#">ABOUT US</a>
-            </li>
-
-            <li class="nav-item mb-2">
-              <a class="nav-link neolink p-0" href="#">CLIENTS</a>
-            </li>
-
-            <li class="nav-item mb-2">
-              <a class="nav-link neolink p-0" href="#">BRANDS</a>
-            </li>
-
-            <li class="nav-item mb-2">
-              <a class="nav-link neolink p-0" href="#">APPS</a>
-            </li>
-
-          </ul>
-
+          <?php
+wp_nav_menu(
+    array(
+        'theme_location' => 'footer_menu_2',
+        'container'      => false,
+        'menu_class'     => 'nav flex-column',
+        'fallback_cb'    => false,
+    )
+);
+?>
         </div>
 
       </div>
