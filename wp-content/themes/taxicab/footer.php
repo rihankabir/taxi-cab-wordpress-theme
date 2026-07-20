@@ -113,7 +113,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
-        <p class="ftxt text-center "><span class="f2txt"></span>© <?php echo date('Y'); ?> Taxi Cab. All Rights Reserved.</p>
+        <p class="ftxt text-center "><span class="f2txt"></span>© <?php echo date('Y'); ?> <?php bloginfo('name'); ?> . All Rights Reserved.</p>
       </div>
     </div>
   </div>
