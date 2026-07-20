@@ -16,37 +16,52 @@ function taxi_cab_setup() {
             'footer_menu'  => 'Footer Menu',
         )
     );
-// Add Bootstrap nav-link class to menu links
-function taxi_cab_nav_link_class( $atts, $item, $args ) {
 
-    if ( $args->theme_location === "primary_menu" ) {
-
-        $atts["class"] = "nav-link";
-
-    }
-
-    return $atts;
-
-}
-add_filter( "nav_menu_link_attributes", "taxi_cab_nav_link_class", 10, 3 );
-
-
-// Addrd Bootstrap nav-item class to menu items
-function taxi_cab_nav_item_class( $classes, $item, $args ) {
-
-    if ( $args->theme_location === "primary_menu" ) {
-
-        $classes[] = "nav-item";
-
-    }
-
-    return $classes;
-
-}
-add_filter( "nav_menu_css_class", "taxi_cab_nav_item_class", 10, 3 );
 }
 add_action( 'after_setup_theme', 'taxi_cab_setup' );
 
+// Addrd Bootstrap nav-link class
+/**
+ * Add Bootstrap nav-link class to menu links.
+ *
+ * @param array    $atts
+ * @param WP_Post  $item
+ * @param stdClass $args
+ * @return array
+ */
+
+function taxi_cab_nav_link_class( $atts, $item, $args ) {
+
+    if ( isset( $args->theme_location ) && 'primary_menu' === $args->theme_location ) {
+        $atts['class'] = 'nav-link';
+    }
+
+    return $atts;
+}
+
+add_filter( 'nav_menu_link_attributes', 'taxi_cab_nav_link_class', 10, 3 );
+
+
+// Added Bootstrap nav-item class
+
+/**
+ * Add Bootstrap nav-item class to menu items.
+ *
+ * @param array    $classes
+ * @param WP_Post  $item
+ * @param stdClass $args
+ * @return array
+ */
+function taxi_cab_nav_item_class( $classes, $item, $args ) {
+
+    if ( isset( $args->theme_location ) && 'primary_menu' === $args->theme_location ) {
+        $classes[] = 'nav-item';
+    }
+
+    return $classes;
+}
+
+add_filter( 'nav_menu_css_class', 'taxi_cab_nav_item_class', 10, 3 );
 
 
 
