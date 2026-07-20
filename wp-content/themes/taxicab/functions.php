@@ -64,7 +64,49 @@ function taxi_cab_nav_item_class( $classes, $item, $args ) {
 
 add_filter( 'nav_menu_css_class', 'taxi_cab_nav_item_class', 10, 3 );
 
+/**
+ * Add Bootstrap nav-link class to footer-menu links.
+ *
+ * @param array    $atts
+ * @param WP_Post  $item
+ * @param stdClass $args
+ * @return array
+ */
 
+
+function taxi_cab_footer_link_class( $atts, $item, $args ) {
+
+    if (
+        isset( $args->theme_location ) &&
+        in_array( $args->theme_location, array( 'footer_menu_1', 'footer_menu_2' ), true )
+    ) {
+        $atts['class'] = 'nav-link neolink p-0';
+    }
+
+    return $atts;
+}
+add_filter( 'nav_menu_link_attributes', 'taxi_cab_footer_link_class', 10, 3 );
+
+/**
+ * Added Bootstrap nav-item class to footer-menu items.
+ *
+ * @param array    $classes
+ * @param WP_Post  $item
+ * @param stdClass $args
+ * @return array
+ */
+function taxi_cab_footer_item_class( $classes, $item, $args ) {
+
+    if (
+        isset( $args->theme_location ) &&
+        in_array( $args->theme_location, array( 'footer_menu_1', 'footer_menu_2' ), true )
+    ) {
+        $classes[] = 'nav-item mb-2';
+    }
+
+    return $classes;
+}
+add_filter( 'nav_menu_css_class', 'taxi_cab_footer_item_class', 10, 3 );
 
 function taxi_assets(){
 
