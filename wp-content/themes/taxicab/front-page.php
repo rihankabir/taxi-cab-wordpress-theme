@@ -27,6 +27,8 @@ get_header();
 <!--paralax section start-->
 
 <!--paralax section ends-->
+<!--drivers section starts-->
+
 <section class="drivers" data-aos="fade-up">
 <div class="container">
   <div class="row">
@@ -146,6 +148,7 @@ get_header();
 
 </div>
 </section>
+<!--drivers section starts-->
 <section class="testimonials">
 <div class="container">
   <h1 class="text-center txtylo">Happy Client's</h1>
