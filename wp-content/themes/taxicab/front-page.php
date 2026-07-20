@@ -148,7 +148,7 @@ get_header();
 
 </div>
 </section>
-<!--drivers section starts-->
+<!--drivers section ends-->
 <section class="testimonials">
 <div class="container">
   <h1 class="text-center txtylo">Happy Client's</h1>
