@@ -81,11 +81,12 @@
 <!--navbar start-->
 <nav class="navbar navbar-expand-lg  custom-navbar sticky-top">
   <div class="container">
-    <a class="navbar-brand" href="<?php echo esc_url(home_url('/')); ?>"><?php 
+    <a class="navbar-brand" href="<?php echo esc_url(home_url('/')); ?>">
+    <?php 
     if(has_custom_logo()){
 the_custom_logo();
     } else {
-   ?> 
+?> 
 <h1><?php bloginfo( 'name' ); ?></h1>
 
 <?php } ?>
@@ -95,20 +96,17 @@ the_custom_logo();
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ms-auto mb-2 gap-5 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="about.html">About Us</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="service.html">Services</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="contact.html">Contact</a>
-        </li>
-       </ul>
+      <?php 
+      wp_nav_menu(
+array(
+    'theme_location' => 'primary_menu',
+    'container' => 'false',
+    'menu_class'=>'navbar-nav ms-auto mb-2 gap-5 mb-lg-0',
+    'fallback_cb'    => false,
+)
+
+      );
+      ?>
           <!-- RIGHT SIDE -->
             <div class="nav-right d-flex ms-auto  align-items-center gap-3">
 
