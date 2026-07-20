@@ -81,7 +81,16 @@
 <!--navbar start-->
 <nav class="navbar navbar-expand-lg  custom-navbar sticky-top">
   <div class="container">
-    <a class="navbar-brand" href="index.html"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/site logo.png" class="img-fluid"> </a>
+    <a class="navbar-brand" href="<?php echo esc_url(home_url('/')); ?>"><?php 
+    if(has_custom_logo()){
+the_custom_logo();
+    } else {
+   ?> 
+<h1><?php bloginfo( 'name' ); ?></h1>
+
+<?php } ?>
+
+    </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
