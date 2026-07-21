@@ -37,8 +37,8 @@ $wp_customize->add_control(
 $wp_customize->add_setting(
     'about_heading',
     array(
-        'default'           => 'Professional Taxi Service',
-        'sanitize_callback' => 'sanitize_text_field',
+        'default' => 'We Provide Trusted <span class="txt3">Cab</span> <span class="txt4">Service</span> In The World',
+    'sanitize_callback' => 'wp_kses_post',
     )
 );
 

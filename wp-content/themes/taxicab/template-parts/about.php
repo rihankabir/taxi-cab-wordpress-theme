@@ -2,17 +2,46 @@
 <div class="container">
     <div class="row">
 <div class="col-lg-6 col-md-6">
-    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/taxi about.jpg" class="img-fluid rounded w-100 about-img" alt="about us image">
+    <?php
+
+$image_id = get_theme_mod( 'about_image' );
+
+if ( $image_id ) {
+
+    echo wp_get_attachment_image(
+        $image_id,
+        'full',
+        false,
+        array(
+            'class' => 'img-fluid','about-img',
+            'alt'   => 'About Image',
+        )
+    );
+
+}
+?>
 </div>
 <div class="col-lg-6 col-md-6">
-    <h2 class="text-start about-txt">ABOUT US</h2>
-    <h1 class="text-start about-txt1 mt-3">We Provide Trusted <span class="txt3">Cab</span> <span class="txt4">Service</span> In The World</h1>
-    <p class="text-start txt5 mt-3">Welcome to “Taxi-Cab”. We are a fully licensed and well-experienced Taxi Service Provider in England.
-
-No matter if you are an individual or a group of people, large or small, business or family, we are here to facilitate you with efficient, clean, and professional Taxi Services in Fort William (England). We are available 24 hours throughout the year. All of our drivers are highly trained and certified to maintain the premier standards for the passengers. We believe that you will be back again to get the services from us in Fort William (England). 
+    <h2 class="text-start about-txt"> <?php echo esc_html( get_theme_mod( 'about_small_heading', 'About Us' ) ); ?></h2>
+    <h1 class="text-start about-txt1 mt-3"><?php echo wp_kses_post(get_theme_mod('about_heading')); ?></h1>
+    <p class="text-start txt5 mt-3"><?php echo wp_kses_post( get_theme_mod( 'about_description' ) ); ?>
 </p>
 
-<a href="about.html" class="btn about-btn">Discover More</a>
+
+<?php
+$button_text = get_theme_mod( 'about_button_text', 'Read More' );
+$button_url  = get_theme_mod( 'about_button_url', '#' );
+
+if ( ! empty( $button_text ) ) :
+?>
+
+<a href="<?php echo esc_url( $button_url ); ?>" class="btn about-btn">
+
+    <?php echo esc_html( $button_text ); ?>
+
+</a>
+
+<?php endif; ?>
 </div>
 
 
