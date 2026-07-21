@@ -2,6 +2,37 @@ html,
 body{
     overflow-x:hidden;
 }
+.owl-dots {
+
+    text-align: center;
+
+    margin-top: 35px;
+
+}
+
+.owl-dot {
+
+    width: 14px;
+
+    height: 14px;
+
+    border-radius: 50%;
+
+    background: #cfcfcf !important;
+
+    margin: 0 6px;
+
+    transition: .3s;
+
+}
+
+.owl-dot.active {
+
+    background: #fcb900 !important;
+
+    transform: scale(1.2);
+
+}
 #loader{
     position: fixed;
     top: 0;
