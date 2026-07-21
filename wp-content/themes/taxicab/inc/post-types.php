@@ -43,11 +43,14 @@ array(
 add_action('init','hero_post_types');
 
 function taxi_cab_offer_post_types(){
+
     register_post_type(
-'offer',array(
-    'labels'=> array(
-'name'=>('Offers'),
-'singular_name'=>('Offer'),
+        
+'offer', array(
+    'labels' => array(
+
+'name' => ('Offers'),
+'singular_name' => ('Offer'),
     ),
       'public' => true,
 
@@ -68,9 +71,6 @@ function taxi_cab_offer_post_types(){
 )
 
     );
-
-
-
 
 }
 add_action('init','taxi_cab_offer_post_types');

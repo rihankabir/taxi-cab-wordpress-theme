@@ -195,7 +195,7 @@ function taxi_cab_offer_meta_box() {
 
         'offer_meta',
 
-        'offer Details',
+        'Offer Details',
 
         'taxi_cab_offer_meta_callback',
 
@@ -212,4 +212,77 @@ function taxi_cab_offer_meta_box() {
 add_action(
     'add_meta_boxes',
     'taxi_cab_offer_meta_box'
+);
+function taxi_cab_offer_meta_callback( $post ) {
+
+    $icon = get_post_meta(
+
+        $post->ID,
+
+        '_offer_icon',
+
+        true
+
+    );
+
+?>
+
+<p>
+
+<label>
+
+<strong>Font Awesome Icon</strong>
+
+</label>
+
+<br>
+
+<input
+type="text"
+name="offer_icon"
+value="<?php echo esc_attr( $icon ); ?>"
+style="width:100%;">
+
+</p>
+
+<p>
+
+Example:
+
+</p>
+
+<code>
+
+fa-solid fa-plane
+
+</code>
+
+<?php
+
+}
+function taxi_cab_save_offer_meta( $post_id ) {
+
+    if ( isset( $_POST['offer_icon'] ) ) {
+
+        update_post_meta(
+
+            $post_id,
+
+            '_offer_icon',
+
+            sanitize_text_field(
+
+                $_POST['offer_icon']
+
+            )
+
+        );
+
+    }
+
+}
+
+add_action(
+    'save_post_offer',
+    'taxi_cab_save_offer_meta'
 );
