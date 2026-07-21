@@ -187,3 +187,29 @@ add_action(
     'save_post',
     'taxi_cab_save_hero_meta'
 );
+
+
+function taxi_cab_offer_meta_box() {
+
+    add_meta_box(
+
+        'offer_meta',
+
+        'offer Details',
+
+        'taxi_cab_offer_meta_callback',
+
+        'offer',
+
+        'normal',
+
+        'high'
+
+    );
+
+}
+
+add_action(
+    'add_meta_boxes',
+    'taxi_cab_offer_meta_box'
+);
