@@ -1,4 +1,4 @@
-
+/*
 
 const slider = document.querySelector(".custom-slider");
 const track = document.querySelector(".slider-track");
@@ -78,7 +78,7 @@ if (slider && track && slides.length > 0) {
     startAutoPlay();
 
 }
-
+*/
 /*====================================
     AOS
 ====================================*/
@@ -401,3 +401,42 @@ $(window).on("load", function(){
 
 });
 
+$(document).ready(function () {
+
+    $(".offers-carousel").owlCarousel({
+
+        loop: true,
+
+        margin: 30,
+
+        nav: false,
+
+        dots: true,
+
+        autoplay: true,
+
+        autoplayTimeout: 4000,
+
+        autoplayHoverPause: true,
+
+        smartSpeed: 700,
+
+        responsive: {
+
+            0: {
+                items: 1
+            },
+
+            576: {
+                items: 2
+            },
+
+            992: {
+                items: 3
+            }
+
+        }
+
+    });
+
+});
