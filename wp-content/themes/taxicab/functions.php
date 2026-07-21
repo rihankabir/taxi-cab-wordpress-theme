@@ -2,6 +2,7 @@
 
 require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/post-types.php';
+require get_template_directory() . '/inc/meta-boxes.php';
 
 
 // Theme Setup
