@@ -116,7 +116,77 @@ $wp_customize->add_control(
         )
     )
 );
+$wp_customize->add_section(
 
+    'offers_section',
+
+    array(
+
+        'title' => 'Offers Section',
+
+        'panel' => 'taxi_cab_options'
+
+    )
+
+);
+$wp_customize->add_setting(
+
+    'offer_small_heading',
+
+    array(
+
+        'default' => 'WHAT WE OFFER',
+
+        'sanitize_callback' => 'sanitize_text_field'
+
+    )
+
+);
+
+$wp_customize->add_control(
+
+    'offer_small_heading',
+
+    array(
+
+        'label' => 'Small Heading',
+
+        'section' => 'offers_section',
+
+        'type' => 'text'
+
+    )
+
+);
+$wp_customize->add_setting(
+
+    'offer_heading',
+
+    array(
+
+        'default' => "We're a Company of Talented",
+
+        'sanitize_callback' => 'sanitize_text_field'
+
+    )
+
+);
+
+$wp_customize->add_control(
+
+    'offer_heading',
+
+    array(
+
+        'label' => 'Main Heading',
+
+        'section' => 'offers_section',
+
+        'type' => 'text'
+
+    )
+
+);
 }
 
 add_action(

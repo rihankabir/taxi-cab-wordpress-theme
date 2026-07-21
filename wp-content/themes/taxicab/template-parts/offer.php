@@ -1,138 +1,105 @@
 <section class="offers card-carousel-section" data-aos="fade-up">
+
     <div class="container">
 
         <h3 class="ofertxt text-center mb-2">
-            WHAT WE OFFER
+
+            <?php
+            echo esc_html(
+                get_theme_mod(
+                    'offer_small_heading',
+                    'WHAT WE OFFER'
+                )
+            );
+            ?>
+
         </h3>
 
         <h1 class="text-center">
-            We're a Company of Talented
+
+            <?php
+            echo esc_html(
+                get_theme_mod(
+                    'offer_heading',
+                    "We're a Company of Talented"
+                )
+            );
+            ?>
+
         </h1>
 
         <div class="custom-slider mt-5">
 
             <div class="owl-carousel offers-carousel">
 
-                <!-- Card 1 -->
-                <div class="custom-card text-center">
+                <?php
 
-                    <i class="fa fa-plane"></i>
+                $services = new WP_Query(
 
-                    <h3>Airport Transfer</h3>
+                    array(
 
-                    <p>
-                        Professional airport pickup and drop service.
-                    </p>
+                        'post_type' => 'offer',
 
-                </div>
+                        'posts_per_page' => -1,
 
-                <!-- Card 2 -->
-                <div class="custom-card text-center">
+                        'orderby' => 'menu_order',
 
-                    <i class="fa-solid fa-car-side"></i>
+                        'order' => 'ASC'
 
-                    <h3>Guided Tours</h3>
+                    )
 
-                    <p>
-                        Comfortable travel with experienced drivers.
-                    </p>
+                );
 
-                </div>
+                if ( $services->have_posts() ) :
 
-                <!-- Card 3 -->
-                <div class="custom-card text-center">
+                    while ( $services->have_posts() ) :
 
-                    <i class="fa-solid fa-hotel"></i>
+                        $services->the_post();
 
-                    <h3>Hotel Service</h3>
+                        $icon = get_post_meta(
 
-                    <p>
-                        Door-to-door pickup from hotels and homes.
-                    </p>
+                            get_the_ID(),
 
-                </div>
+                            '_offer_icon',
 
-                <!-- Card 4 -->
-                <div class="custom-card text-center">
+                            true
 
-                    <i class="fa-brands fa-fort-awesome-alt"></i>
+                        );
 
-                    <h3>B&B Service</h3>
+                ?>
 
-                    <p>
-                        Clean and comfortable accommodation service.
-                    </p>
+                    <div class="custom-card text-center">
 
-                </div>
+                        <i class="<?php echo esc_attr( $icon ); ?>"></i>
 
-                <!-- Card 5 -->
-                <div class="custom-card text-center">
+                        <h3>
 
-                    <i class="fa-solid fa-taxi"></i>
+                            <?php the_title(); ?>
 
-                    <h3>Taxi Booking</h3>
+                        </h3>
 
-                    <p>
-                        24/7 reliable taxi booking support.
-                    </p>
+                        <p>
 
-                </div>
+                            <?php the_content(); ?>
 
-                <!-- Card 6 -->
-                <div class="custom-card text-center">
+                        </p>
 
-                    <i class="fa-solid fa-route"></i>
+                    </div>
 
-                    <h3>Long Travel</h3>
+                <?php
 
-                    <p>
-                        Safe and smooth long-distance journeys.
-                    </p>
+                    endwhile;
 
-                </div>
+                    wp_reset_postdata();
 
-                <!-- Card 7 -->
-                <div class="custom-card text-center">
+                endif;
 
-                    <i class="fa-solid fa-user-shield"></i>
-
-                    <h3>Safe Journey</h3>
-
-                    <p>
-                        Your safety and comfort are our priority.
-                    </p>
-
-                </div>
-
-                <!-- Card 8 -->
-                <div class="custom-card text-center">
-
-                    <i class="fa-solid fa-clock"></i>
-
-                    <h3>On Time</h3>
-
-                    <p>
-                        Always punctual pickup and drop service.
-                    </p>
-
-                </div>
-
-                <!-- Card 9 -->
-                <div class="custom-card text-center">
-
-                    <i class="fa-solid fa-map-location-dot"></i>
-
-                    <h3>Anywhere Transport</h3>
-
-                    <p>
-                        Travel anywhere with trusted drivers.
-                    </p>
-
-                </div>
+                ?>
 
             </div>
 
         </div>
 
     </div>
+
 </section>
