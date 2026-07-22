@@ -1,8 +1,9 @@
-<?php get_header();
-
+<?php
+/*
+Template Name: About Page
+*/
+get_header();
 ?>
-
-
 <!--navbar ends-->
 <section class="breadcumb-about">
     <div class="container-fluid">
