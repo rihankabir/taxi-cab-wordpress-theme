@@ -24,7 +24,23 @@ if($testimonial->have_posts()) :
 while($testimonial->have_posts()) :
 
 $testimonial->the_post();
+$company = get_post_meta(
+    get_the_ID(),
+    '_company',
+    true
+);
 
+$position = get_post_meta(
+    get_the_ID(),
+    '_position',
+    true
+);
+
+$rating = get_post_meta(
+    get_the_ID(),
+    '_rating',
+    true
+);
 ?>
     <div class="testimonial">
     <?php
@@ -49,10 +65,24 @@ array(
 
     <h4><?php the_title(); ?> </h4>
 
-    <span>CEO, ABC Company</span>
+    <span> <?php
+
+    echo esc_html(
+        $position . ' - ' . $company
+    );
+
+    ?></span>
 
     <div class="stars">
-        ★★★★★
+        <?php
+
+for ( $i = 1; $i <= $rating; $i++ ) :
+
+?>
+
+<i class="fa-solid fa-star"></i>
+
+<?php endfor; ?>
     </div>
 
     <p>
