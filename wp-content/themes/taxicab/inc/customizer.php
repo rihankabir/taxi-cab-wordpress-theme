@@ -210,7 +210,22 @@ $wp_customize->add_control(
         'type' => 'text'
     )
 );
+$wp_customize->add_setting(
+    'tariff_heading',
+    array(
+        'default' => 'OUR',
+        'sanitize_callback' => 'sanitize_text_field'
+    )
+);
 
+$wp_customize->add_control(
+    'tariff_heading',
+    array(
+        'label' => 'Middle Heading',
+        'section' => 'tariff_section',
+        'type' => 'text'
+    )
+);
 }
 
 add_action(
