@@ -286,3 +286,17 @@ add_action(
     'save_post_offer',
     'taxi_cab_save_offer_meta'
 );
+
+function taxi_cab_testimonial_meta_box(){
+
+add_meta_box(
+    'testimonial_meta',
+    'Testimonial Details',
+    'taxi_cab_testimonial_meta_callback',
+    'testimonial',
+    'normal',
+    'high'
+);
+
+}
+add_action('add_meta_boxes','taxi_cab_testimonial_meta_box');
