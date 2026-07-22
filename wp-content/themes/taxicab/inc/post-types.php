@@ -75,8 +75,31 @@ function taxi_cab_offer_post_types(){
 }
 add_action('init','taxi_cab_offer_post_types');
 
+function taxi_cab_testimonial_post_types(){
+    
+register_post_type(
+    'testimonial', array(
+        'labels' => array(
+'name' => ('Testimonials'),
+'singular_name' => ('Testimonial'),
+        ),
+'public' => true,
+'show_in_menu' => true,
+'menu_icon' => 'dashicons-format-quote',
+'supports' => array(
+    'title',
+    'editor',
+     'thumbnail',
 
+     'page-attributes'
+),
+ 'show_in_rest' => true
 
+    )
+);
+
+}
+add_action('init','taxi_cab_testimonial_post_types');
 
 ?>
 
