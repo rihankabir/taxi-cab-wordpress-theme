@@ -1,4 +1,7 @@
-<?php get_header(); ?>
+<?php get_header();
+
+?>
+
 
 <!--navbar ends-->
 <section class="breadcumb-about">
