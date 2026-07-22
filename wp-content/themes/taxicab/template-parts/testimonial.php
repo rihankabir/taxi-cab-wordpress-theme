@@ -27,9 +27,27 @@ $testimonial->the_post();
 
 ?>
     <div class="testimonial">
-    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/testimonial client1.jpg" alt="Client" class="img-fluid">
+    <?php
 
-    <h4>John Doe</h4>
+if(has_post_thumbnail()){
+
+the_post_thumbnail(
+
+'thumbnail',
+
+array(
+
+'class'=>'client-img img-fluid rounded-circle'
+
+)
+
+);
+
+}
+
+?>
+
+    <h4><?php the_title(); ?> </h4>
 
     <span>CEO, ABC Company</span>
 
@@ -38,7 +56,7 @@ $testimonial->the_post();
     </div>
 
     <p>
-        Excellent service and outstanding support.
+        <?php the_content(); ?>
     </p>
 </div>
  <?php
