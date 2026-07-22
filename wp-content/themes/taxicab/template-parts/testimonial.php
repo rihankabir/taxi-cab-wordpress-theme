@@ -4,7 +4,28 @@
   <h3 class="text-center text-bold txtdrk">Testimonials</h3>
   <div class="row">
 <div class="owl-carousel testimonial-slider mt-5">
+    <?php
+$args = array(
 
+'post_type'=>'testimonial',
+
+'posts_per_page'=>-1,
+
+'orderby'=>'menu_order',
+
+'order'=>'ASC'
+
+);
+
+$testimonial = new WP_Query($args);
+
+if($testimonial->have_posts()) :
+
+while($testimonial->have_posts()) :
+
+$testimonial->the_post();
+
+?>
     <div class="testimonial">
     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/testimonial client1.jpg" alt="Client" class="img-fluid">
 
@@ -20,40 +41,19 @@
         Excellent service and outstanding support.
     </p>
 </div>
+ <?php
 
-    <div class="testimonial">
-    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/testimonial client2.jpg" alt="Client" class="img-fluid">
+                    endwhile;
 
-    <h4>John Doe</h4>
+                    wp_reset_postdata();
 
-    <span>CEO, ABC Company</span>
+                endif;
 
-    <div class="stars">
-        ★★★★★
-    </div>
+                ?>
 
-    <p>
-        Excellent service and outstanding support.
-    </p>
-</div>
 
-    <div class="testimonial">
-    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/testimonial client3.jpg" alt="Client" class="img-fluid">
+    
 
-    <h4>John Doe</h4>
-
-    <span>CEO, ABC Company</span>
-
-    <div class="stars">
-        ★★★★★
-    </div>
-
-    <p>
-        Excellent service and outstanding support.
-    </p>
-</div>
-
-</div>
 
   </div>
 </div>
