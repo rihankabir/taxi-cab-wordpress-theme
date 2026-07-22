@@ -226,6 +226,22 @@ $wp_customize->add_control(
         'type' => 'text'
     )
 );
+$wp_customize->add_setting(
+    'tariff_heading_last',
+    array(
+        'default' => 'TARIFFS',
+        'sanitize_callback' => 'sanitize_text_field'
+    )
+);
+
+$wp_customize->add_control(
+    'tariff_heading_last',
+    array(
+        'label' => 'Last Heading',
+        'section' => 'tariff_section',
+        'type' => 'text'
+    )
+);
 }
 
 add_action(
