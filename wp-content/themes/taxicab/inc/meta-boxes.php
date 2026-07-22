@@ -497,3 +497,53 @@ Featured Card
 <?php
 
 }
+function taxi_cab_save_tariff_meta( $post_id ) {
+
+    if (
+        ! isset( $_POST['tariff_nonce_field'] ) ||
+        ! wp_verify_nonce(
+            $_POST['tariff_nonce_field'],
+            'tariff_nonce'
+        )
+    ) {
+        return;
+    }
+
+    if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+        return;
+    }
+
+    if ( isset( $_POST['tariff_price'] ) ) {
+
+        update_post_meta(
+            $post_id,
+            '_tariff_price',
+            sanitize_text_field( $_POST['tariff_price'] )
+        );
+
+    }
+
+    if ( isset( $_POST['tariff_unit'] ) ) {
+
+        update_post_meta(
+            $post_id,
+            '_tariff_unit',
+            sanitize_text_field( $_POST['tariff_unit'] )
+        );
+
+    }
+
+    $featured = isset( $_POST['tariff_featured'] ) ? 1 : 0;
+
+    update_post_meta(
+        $post_id,
+        '_tariff_featured',
+        $featured
+    );
+
+}
+
+add_action(
+    'save_post_tariff',
+    'taxi_cab_save_tariff_meta'
+);
