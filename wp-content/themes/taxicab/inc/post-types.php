@@ -100,6 +100,50 @@ register_post_type(
 
 }
 add_action('init','taxi_cab_testimonial_post_types');
+function taxi_cab_tariff_post_type() {
+
+    register_post_type(
+
+        'tariff',
+
+        array(
+
+            'labels' => array(
+
+                'name' => __( 'Tariffs', 'taxi-cab' ),
+
+                'singular_name' => __( 'Tariff', 'taxi-cab' )
+
+            ),
+
+            'public' => true,
+
+            'menu_icon' => 'dashicons-money-alt',
+
+            'supports' => array(
+
+                'title',
+
+                'editor',
+
+                'thumbnail',
+
+                'page-attributes'
+
+            ),
+
+            'show_in_rest' => true
+
+        )
+
+    );
+
+}
+
+add_action(
+    'init',
+    'taxi_cab_tariff_post_type'
+);
 
 ?>
 
