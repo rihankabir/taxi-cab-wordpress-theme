@@ -300,3 +300,72 @@ add_meta_box(
 
 }
 add_action('add_meta_boxes','taxi_cab_testimonial_meta_box');
+
+
+function taxi_cab_testimonial_meta_callback($post){
+wp_nonce_field(
+    'testimonial_nonce',
+    'testimonial_nonce_field'
+);
+
+$company = get_post_meta($post->ID,'company',true);
+$position = get_post_meta($post->ID,'position',true);
+$rating = get_post_meta( $post->ID, 'rating', true );
+
+?>
+
+<p>
+
+<label><strong>Company</strong></label>
+
+<input
+type="text"
+name="company"
+class="widefat"
+value="<?php echo esc_attr( $company ); ?>">
+
+</p>
+
+<p>
+
+<label><strong>Position</strong></label>
+
+<input
+type="text"
+name="position"
+class="widefat"
+value="<?php echo esc_attr( $position ); ?>">
+
+</p>
+
+<p>
+
+<label><strong>Rating (1-5)</strong></label>
+
+<select name="rating" class="widefat">
+
+<?php
+
+for ( $i = 1; $i <= 5; $i++ ) :
+
+?>
+
+<option
+value="<?php echo $i; ?>"
+<?php selected( $rating, $i ); ?>>
+
+<?php echo $i; ?> Star
+
+</option>
+
+<?php endfor; ?>
+
+</select>
+
+</p>
+
+<?php
+
+}
+
+
