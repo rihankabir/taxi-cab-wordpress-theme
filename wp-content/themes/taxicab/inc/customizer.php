@@ -187,6 +187,30 @@ $wp_customize->add_control(
     )
 
 );
+$wp_customize->add_section(
+    'tariff_section',
+    array(
+        'title' => 'Tariff Section',
+        'panel' => 'taxi_cab_options'
+    )
+);
+$wp_customize->add_setting(
+    'tariff_small_heading',
+    array(
+        'default' => 'SEE',
+        'sanitize_callback' => 'sanitize_text_field'
+    )
+);
+
+$wp_customize->add_control(
+    'tariff_small_heading',
+    array(
+        'label' => 'Small Heading',
+        'section' => 'tariff_section',
+        'type' => 'text'
+    )
+);
+
 }
 
 add_action(
