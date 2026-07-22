@@ -53,7 +53,7 @@ the_post_thumbnail(
 
 array(
 
-'class'=>'client-img img-fluid rounded-circle'
+'class'=>'client-img img-fluid rounded'
 
 )
 
