@@ -438,3 +438,62 @@ add_action(
     'add_meta_boxes',
     'taxi_cab_tariff_meta_box'
 );
+function taxi_cab_tariff_meta_callback( $post ) {
+
+    wp_nonce_field(
+        'tariff_nonce',
+        'tariff_nonce_field'
+    );
+
+    $price = get_post_meta( $post->ID, '_tariff_price', true );
+
+    $unit = get_post_meta( $post->ID, '_tariff_unit', true );
+
+    $featured = get_post_meta( $post->ID, '_tariff_featured', true );
+
+?>
+
+<p>
+
+<label><strong>Price</strong></label>
+
+<input
+type="text"
+name="tariff_price"
+class="widefat"
+value="<?php echo esc_attr( $price ); ?>">
+
+</p>
+
+<p>
+
+<label><strong>Price Unit</strong></label>
+
+<input
+type="text"
+name="tariff_unit"
+class="widefat"
+placeholder="/km"
+value="<?php echo esc_attr( $unit ); ?>">
+
+</p>
+
+<p>
+
+<label>
+
+<input
+type="checkbox"
+name="tariff_featured"
+value="1"
+<?php checked( $featured, 1 ); ?>>
+
+Featured Card
+
+</label>
+
+</p>
+
+<?php
+
+}
