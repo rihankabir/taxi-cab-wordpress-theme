@@ -1,4 +1,8 @@
-<?php get_header(); ?>
+<?php
+/*
+Template Name: Contact Page
+*/
+get_header(); ?>
 <!--navbar ends-->
 <!--breadcrumb section starts-->
 <section class="breadcumb-about service-breadcrumb">
