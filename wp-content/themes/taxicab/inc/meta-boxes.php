@@ -368,4 +368,55 @@ value="<?php echo $i; ?>"
 
 }
 
+function taxi_cab_save_testimonial_meta( $post_id ) {
 
+    if (
+        ! isset( $_POST['testimonial_nonce_field'] ) ||
+        ! wp_verify_nonce(
+            $_POST['testimonial_nonce_field'],
+            'testimonial_nonce'
+        )
+    ) {
+        return;
+    }
+
+    if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+        return;
+    }
+
+    if ( isset( $_POST['company'] ) ) {
+
+        update_post_meta(
+            $post_id,
+            '_company',
+            sanitize_text_field( $_POST['company'] )
+        );
+
+    }
+
+    if ( isset( $_POST['position'] ) ) {
+
+        update_post_meta(
+            $post_id,
+            '_position',
+            sanitize_text_field( $_POST['position'] )
+        );
+
+    }
+
+    if ( isset( $_POST['rating'] ) ) {
+
+        update_post_meta(
+            $post_id,
+            '_rating',
+            absint( $_POST['rating'] )
+        );
+
+    }
+
+}
+
+add_action(
+    'save_post_testimonial',
+    'taxi_cab_save_testimonial_meta'
+);
