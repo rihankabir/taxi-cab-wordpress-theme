@@ -420,3 +420,21 @@ add_action(
     'save_post_testimonial',
     'taxi_cab_save_testimonial_meta'
 );
+
+function taxi_cab_tariff_meta_box() {
+
+    add_meta_box(
+        'tariff_meta',
+        'Tariff Details',
+        'taxi_cab_tariff_meta_callback',
+        'tariff',
+        'normal',
+        'high'
+    );
+
+}
+
+add_action(
+    'add_meta_boxes',
+    'taxi_cab_tariff_meta_box'
+);
