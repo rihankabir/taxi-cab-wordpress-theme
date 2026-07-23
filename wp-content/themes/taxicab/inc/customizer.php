@@ -266,6 +266,22 @@ $wp_customize->add_control(
         'type'    => 'text',
     )
 );
+$wp_customize->add_setting(
+    'app_heading',
+    array(
+        'default'           => 'DOWNLOAD THE APP',
+        'sanitize_callback' => 'sanitize_text_field',
+    )
+);
+
+$wp_customize->add_control(
+    'app_heading',
+    array(
+        'label'   => 'Main Heading',
+        'section' => 'app_download_section',
+        'type'    => 'text',
+    )
+);
 }
 
 add_action(
