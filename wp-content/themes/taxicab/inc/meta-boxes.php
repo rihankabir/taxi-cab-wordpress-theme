@@ -547,3 +547,24 @@ add_action(
     'save_post_tariff',
     'taxi_cab_save_tariff_meta'
 );
+
+function taxi_cab_app_feature_meta_box(){
+
+add_meta_box(
+
+'app_feature_meta',
+'Feature Details',
+'taxi_cab_app_feature_meta_callback',
+'app_feature',
+'normal',
+'high'
+
+
+);
+
+
+}
+add_action(
+    'add_meta_boxes',
+    'taxi_cab_app_feature_meta_box'
+);
