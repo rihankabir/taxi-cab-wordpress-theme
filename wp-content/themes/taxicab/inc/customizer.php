@@ -282,6 +282,24 @@ $wp_customize->add_control(
         'type'    => 'text',
     )
 );
+$wp_customize->add_setting(
+    'app_image',
+    array(
+        'sanitize_callback' => 'absint',
+    )
+);
+
+$wp_customize->add_control(
+    new WP_Customize_Media_Control(
+        $wp_customize,
+        'app_image',
+        array(
+            'label'      => 'Mobile App Image',
+            'section'    => 'app_download_section',
+            'mime_type'  => 'image',
+        )
+    )
+);
 }
 
 add_action(
