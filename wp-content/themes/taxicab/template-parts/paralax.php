@@ -1,6 +1,13 @@
 <section class="paralax">
 <div class="container">
-  <h2 class="text-center ptext">Get More Benefits</h2>
+  <h2 class="text-center ptext"><?php
+echo esc_html(
+    get_theme_mod(
+        'app_small_heading',
+        'Get More Benefits'
+    )
+);
+?></h2>
 <h1 class="text-center text-bold p1txt">DOWNLOAD THE APP</h1>
   <div class="row">
 <div class="col-md-4">
