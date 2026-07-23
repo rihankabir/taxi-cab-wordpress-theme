@@ -568,3 +568,74 @@ add_action(
     'add_meta_boxes',
     'taxi_cab_app_feature_meta_box'
 );
+
+function taxi_cab_app_feature_meta_callback( $post ) {
+
+    wp_nonce_field(
+        'app_feature_nonce',
+        'app_feature_nonce_field'
+    );
+
+    $number = get_post_meta(
+        $post->ID,
+        '_feature_number',
+        true
+    );
+
+    $position = get_post_meta(
+        $post->ID,
+        '_feature_position',
+        true
+    );
+
+?>
+
+<p>
+
+<label>
+
+<strong>Feature Number</strong>
+
+</label>
+
+<input
+type="text"
+class="widefat"
+name="feature_number"
+value="<?php echo esc_attr( $number ); ?>">
+
+</p>
+
+<p>
+
+<label>
+
+<strong>Position</strong>
+
+</label>
+
+<select
+name="feature_position"
+class="widefat">
+
+<option value="left"
+<?php selected( $position, 'left' ); ?>>
+
+Left
+
+</option>
+
+<option value="right"
+<?php selected( $position, 'right' ); ?>>
+
+Right
+
+</option>
+
+</select>
+
+</p>
+
+<?php
+
+}
