@@ -242,6 +242,14 @@ $wp_customize->add_control(
         'type' => 'text'
     )
 );
+$wp_customize->add_section(
+    'app_download_section',
+    array(
+        'title'    => __( 'App Download Section', 'taxi-cab' ),
+        'panel'    => 'taxi_cab_options',
+        'priority' => 8,
+    )
+);
 }
 
 add_action(
