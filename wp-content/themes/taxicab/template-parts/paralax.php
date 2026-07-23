@@ -11,40 +11,58 @@ echo esc_html(
 <h1 class="text-center text-bold p1txt"><?php echo esc_html(get_theme_mod('app_heading','DOWNLOAD THE APP')); ?> </h1>
   <div class="row">
 <div class="col-md-4">
+<?php
+
+$left = new WP_Query(
+
+    array(
+
+        'post_type' => 'app_feature',
+
+        'posts_per_page' => -1,
+
+        'orderby' => 'menu_order',
+
+        'order' => 'ASC',
+
+        'meta_key' => '_feature_position',
+
+        'meta_value' => 'left'
+
+    )
+
+);
+
+while ( $left->have_posts() ) :
+
+$left->the_post();
+
+$number = get_post_meta(
+    get_the_ID(),
+    '_feature_number',
+    true
+);
+
+?>
 
     <!-- Item 1 -->
     <div class="promo-box mt-5 d-flex align-items-start mb-4" data-aos="fade-right">
 
         <div class="promo">
-            <span class="num">01</span>
+            <span class="num"> <?php echo esc_html( $number ); ?>
+</span>
         </div>
 
         <div class="promotxt">
-            <h2 class="txtt1">FAST BOOKING</h2>
+            <h2 class="txtt1"><?php the_title(); ?></h2>
 
             <h3 class="white">
-                Nam ac ligula congue, interdum enim sit amet, fermentum nisi.
+               <?php the_content(); ?>
             </h3>
         </div>
 
     </div>
-
-    <!-- Item 2 -->
-    <div class="promo-box d-flex align-items-start" data-aos="fade-right">
-
-        <div class="promo">
-            <span class="num">02</span>
-        </div>
-
-        <div class="promotxt">
-            <h2 class="txtt1">EASY TO USE</h2>
-
-            <h3 class="white">
-                Nam ac ligula congue, interdum enim sit amet, fermentum nisi.
-            </h3>
-        </div>
-
-    </div>
+<?php endwhile; wp_reset_postdata(); ?>
 
 </div>
 <div class="col-md-4">
@@ -73,37 +91,58 @@ echo wp_get_attachment_image(
 </div>
 <div class="col-md-4">
 
+<?php
+
+$left = new WP_Query(
+
+    array(
+
+        'post_type' => 'app_feature',
+
+        'posts_per_page' => -1,
+
+        'orderby' => 'menu_order',
+
+        'order' => 'ASC',
+
+        'meta_key' => '_feature_position',
+
+        'meta_value' => 'right'
+
+    )
+
+);
+
+while ( $left->have_posts() ) :
+
+$left->the_post();
+
+$number = get_post_meta(
+    get_the_ID(),
+    '_feature_number',
+    true
+);
+
+?>
     <!-- Item 1 -->
     <div class="promo-box mt-5 d-flex align-items-start mb-4" data-aos="fade-left">
 
         <div class="promo">
-            <span class="num">03</span>
+            <span class="num"><?php echo esc_html( $number ); ?>
+</span>
         </div>
 
         <div class="promotxt">
-            <h2 class="txtt1">GPS SEARCHING</h2>
+            <h2 class="txtt1"> <?php the_title(); ?></h2>
 
             <h3 class="white">
-                Nam ac ligula congue, interdum enim sit amet, fermentum nisi.
+                 <?php the_content(); ?>
             </h3>
         </div>
 
     </div>
 
-    <!-- Item 2 -->
-    <div class="promo-box d-flex align-items-start" data-aos="fade-left">
-
-        <div class="promo">
-            <span class="num">04</span>
-        </div>
-
-        <div class="promotxt">
-            <h2 class="txtt1">BONUSES FOR RIDE</h2>
-
-            <h3 class="white">
-                Nam ac ligula congue, interdum enim sit amet, fermentum nisi.
-            </h3>
-        </div>
+    <?php endwhile; wp_reset_postdata(); ?>
 
     </div>
 
