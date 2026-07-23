@@ -48,7 +48,28 @@ echo esc_html(
 
 </div>
 <div class="col-md-4">
-  <img src="<?php echo get_template_directory_uri(); ?>/assets/images/taxiapp.png" alt="taxi cab mobile app" class="img-fluid mt-3 w-100" data-aos="fade-up">
+  <?php
+
+$image = get_theme_mod( 'app_image' );
+
+echo wp_get_attachment_image(
+
+    $image,
+
+    'large',
+
+    false,
+
+    array(
+
+        'class' => 'img-fluid mt-3 w-100',
+        'data-aos'=>"fade-up"
+
+    )
+
+);
+
+?>
 </div>
 <div class="col-md-4">
 
