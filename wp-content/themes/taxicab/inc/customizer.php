@@ -250,6 +250,22 @@ $wp_customize->add_section(
         'priority' => 8,
     )
 );
+$wp_customize->add_setting(
+    'app_small_heading',
+    array(
+        'default'           => 'Get More Benefits',
+        'sanitize_callback' => 'sanitize_text_field',
+    )
+);
+
+$wp_customize->add_control(
+    'app_small_heading',
+    array(
+        'label'   => 'Small Heading',
+        'section' => 'app_download_section',
+        'type'    => 'text',
+    )
+);
 }
 
 add_action(
