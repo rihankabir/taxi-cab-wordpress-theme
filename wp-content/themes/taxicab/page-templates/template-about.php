@@ -91,9 +91,7 @@ Our professional drivers ensure every ride is smooth, affordable, and hassle-fre
             <!-- Right Side -->
             <div class="col-lg-6">
 
-                <img src="images/about.jpg"
-                     class="img-fluid rounded"
-                     alt="About Us">
+                      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/about.jpg" alt="About Us" class="img-fluid rounded" data-aos="fade-up">
 
             </div>
 
