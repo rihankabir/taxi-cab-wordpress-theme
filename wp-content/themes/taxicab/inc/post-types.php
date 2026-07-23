@@ -144,6 +144,58 @@ add_action(
     'init',
     'taxi_cab_tariff_post_type'
 );
+function taxi_cab_app_feature_post_type() {
 
+    $labels = array(
+
+        'name'               => __( 'App Features', 'taxi-cab' ),
+        'singular_name'      => __( 'App Feature', 'taxi-cab' ),
+        'add_new'            => __( 'Add New Feature', 'taxi-cab' ),
+        'add_new_item'       => __( 'Add New App Feature', 'taxi-cab' ),
+        'edit_item'          => __( 'Edit App Feature', 'taxi-cab' ),
+        'new_item'           => __( 'New App Feature', 'taxi-cab' ),
+        'view_item'          => __( 'View App Feature', 'taxi-cab' ),
+        'search_items'       => __( 'Search App Features', 'taxi-cab' ),
+        'not_found'          => __( 'No Features Found', 'taxi-cab' ),
+        'menu_name'          => __( 'App Features', 'taxi-cab' )
+
+    );
+
+    register_post_type(
+
+        'app_feature',
+
+        array(
+
+            'labels'             => $labels,
+
+            'public'             => true,
+
+            'menu_icon'          => 'dashicons-smartphone',
+
+            'supports'           => array(
+
+                'title',
+                'editor',
+                'page-attributes'
+
+            ),
+
+            'show_in_rest'       => true,
+
+            'has_archive'        => false,
+
+            'publicly_queryable' => false
+
+        )
+
+    );
+
+}
+
+add_action(
+    'init',
+    'taxi_cab_app_feature_post_type'
+);
 ?>
 
