@@ -8,7 +8,7 @@ echo esc_html(
     )
 );
 ?></h2>
-<h1 class="text-center text-bold p1txt">DOWNLOAD THE APP</h1>
+<h1 class="text-center text-bold p1txt"><?php echo esc_html(get_theme_mod('app_heading','DOWNLOAD THE APP')); ?> </h1>
   <div class="row">
 <div class="col-md-4">
 
