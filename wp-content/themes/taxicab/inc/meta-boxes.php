@@ -639,3 +639,57 @@ Right
 <?php
 
 }
+function taxi_cab_save_app_feature_meta( $post_id ) {
+
+    if (
+        ! isset( $_POST['app_feature_nonce_field'] ) ||
+        ! wp_verify_nonce(
+            $_POST['app_feature_nonce_field'],
+            'app_feature_nonce'
+        )
+    ) {
+        return;
+    }
+
+    if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+        return;
+    }
+
+    if ( isset( $_POST['feature_number'] ) ) {
+
+        update_post_meta(
+
+            $post_id,
+
+            '_feature_number',
+
+            sanitize_text_field(
+                $_POST['feature_number']
+            )
+
+        );
+
+    }
+
+    if ( isset( $_POST['feature_position'] ) ) {
+
+        update_post_meta(
+
+            $post_id,
+
+            '_feature_position',
+
+            sanitize_text_field(
+                $_POST['feature_position']
+            )
+
+        );
+
+    }
+
+}
+
+add_action(
+    'save_post_app_feature',
+    'taxi_cab_save_app_feature_meta'
+);
