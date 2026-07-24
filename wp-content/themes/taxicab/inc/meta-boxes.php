@@ -717,3 +717,75 @@ add_action(
     'add_meta_boxes',
     'taxi_cab_driver_benefit_meta_box'
 );
+function taxi_cab_driver_benefit_meta_callback( $post ) {
+
+    wp_nonce_field(
+        'driver_benefit_nonce',
+        'driver_benefit_nonce_field'
+    );
+
+    $number = get_post_meta(
+        $post->ID,
+        '_driver_number',
+        true
+    );
+
+    $column = get_post_meta(
+        $post->ID,
+        '_driver_column',
+        true
+    );
+
+?>
+
+<p>
+
+<label>
+
+<strong>Benefit Number</strong>
+
+</label>
+
+<input
+type="text"
+class="widefat"
+name="driver_number"
+value="<?php echo esc_attr( $number ); ?>">
+
+</p>
+
+<p>
+
+<label>
+
+<strong>Column</strong>
+
+</label>
+
+<select
+name="driver_column"
+class="widefat">
+
+<option
+value="left"
+<?php selected( $column, 'left' ); ?>>
+
+Left
+
+</option>
+
+<option
+value="right"
+<?php selected( $column, 'right' ); ?>>
+
+Right
+
+</option>
+
+</select>
+
+</p>
+
+<?php
+
+}
