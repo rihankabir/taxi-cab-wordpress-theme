@@ -144,7 +144,7 @@ echo wp_get_attachment_image(
 
     array(
 
-        'class' => 'w-100 rounded'
+        'class' => ' img-fluid w-100 rounded'
 
     )
 
