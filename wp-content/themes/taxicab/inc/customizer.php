@@ -339,6 +339,22 @@ $wp_customize->add_control(
         'type' => 'text',
     )
 );
+$wp_customize->add_setting(
+    'driver_description',
+    array(
+        'default' => 'Quisque sollicitudin feugiat risus, eu posuere ex euismod eu. Phasellus hendrerit, massa efficitur dapibus pulvinar, sapien eros sodales ante, euismod aliquet nulla metus a mauris.',
+        'sanitize_callback' => 'sanitize_textarea_field',
+    )
+);
+
+$wp_customize->add_control(
+    'driver_description',
+    array(
+        'label' => 'Description',
+        'section' => 'driver_section',
+        'type' => 'textarea',
+    )
+);
 }
 
 add_action(
