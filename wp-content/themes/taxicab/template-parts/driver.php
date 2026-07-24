@@ -124,44 +124,26 @@ if ( $right_driver->have_posts() ) :
           <div class="drive-box d-flex align-items-center gap-3 mt-5">
 
             <div class="promo">
-              <span class="num">04</span>
+              <span class="num">  <?php echo esc_html( $number ); ?></span>
             </div>
 
             <div class="promotxt">
-              <h2 class="txtt1">Fast Booking</h2>
+              <h2 class="txtt1">   <?php the_title(); ?></h2>
             </div>
 
           </div>
 
-          <div class="drive-box d-flex align-items-center gap-3 mt-5">
-
-            <div class="promo">
-              <span class="num">05</span>
-            </div>
-
-            <div class="promotxt">
-              <h2 class="txtt1">24/7 Support</h2>
-            </div>
-
-          </div>
-
-          <div class="drive-box d-flex align-items-center gap-3 mt-5">
-
-            <div class="promo">
-              <span class="num">06</span>
-            </div>
-
-            <div class="promotxt">
-              <h2 class="txtt1">Easy Payment</h2>
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
 
     </div>
+<?php
+
+    endwhile;
+
+    wp_reset_postdata();
+
+endif;
+
+?>
 
   </div>
 <div class="col-lg-5 col-md-5 col-12  d-flex justify-content-center align-items-center text-center">
