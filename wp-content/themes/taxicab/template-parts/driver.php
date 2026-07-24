@@ -41,6 +41,32 @@ echo esc_html(
 
         <!-- LEFT SIDE -->
         <div class="drive-column">
+<?php
+
+$left_driver = new WP_Query(
+    array(
+        'post_type'      => 'driver_benefit',
+        'posts_per_page' => -1,
+        'orderby'        => 'menu_order',
+        'order'          => 'ASC',
+        'meta_key'       => '_driver_column',
+        'meta_value'     => 'left'
+    )
+);
+
+if ( $left_driver->have_posts() ) :
+
+    while ( $left_driver->have_posts() ) :
+
+        $left_driver->the_post();
+
+        $number = get_post_meta(
+            get_the_ID(),
+            '_driver_number',
+            true
+        );
+
+?>
 
           <div class="drive-box d-flex align-items-center gap-3 mt-5">
 
