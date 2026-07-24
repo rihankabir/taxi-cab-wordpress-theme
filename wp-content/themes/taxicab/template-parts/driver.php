@@ -4,7 +4,14 @@
 
   <div class="col-lg-7 col-md-7 col-12">
 
-    <h2 class="text-start text-bold drivetxt" data-aos="fade-right">For Drivers</h2>
+    <h2 class="text-start text-bold drivetxt" data-aos="fade-right"><?php
+echo esc_html(
+    get_theme_mod(
+        'driver_small_heading',
+        'For Drivers'
+    )
+);
+?></h2>
 
     <h1 class="text-start text-bold drivetxt1" data-aos="fade-right">
       Do You Want To Earn With Us?
