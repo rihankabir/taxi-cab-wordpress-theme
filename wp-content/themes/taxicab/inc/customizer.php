@@ -355,6 +355,24 @@ $wp_customize->add_control(
         'type' => 'textarea',
     )
 );
+$wp_customize->add_setting(
+    'driver_image',
+    array(
+        'sanitize_callback' => 'absint',
+    )
+);
+
+$wp_customize->add_control(
+    new WP_Customize_Media_Control(
+        $wp_customize,
+        'driver_image',
+        array(
+            'label' => 'Driver Section Image',
+            'section' => 'driver_section',
+            'mime_type' => 'image',
+        )
+    )
+);
 }
 
 add_action(
