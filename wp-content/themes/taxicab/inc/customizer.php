@@ -381,7 +381,40 @@ $wp_customize->add_section(
         'priority'=>10,
     )
 );
+$wp_customize->add_setting(
+    'promo_image_one',
+    array(
+        'sanitize_callback' => 'absint',
+    )
+);
 
+$wp_customize->add_control(
+    new WP_Customize_Media_Control(
+        $wp_customize,
+        'promo_image_one',
+        array(
+            'label'     => 'Banner One Image',
+            'section'   => 'promo_section',
+            'mime_type' => 'image',
+        )
+    )
+);
+$wp_customize->add_setting(
+    'promo_discount',
+    array(
+        'default' => '-50%',
+        'sanitize_callback' => 'sanitize_text_field',
+    )
+);
+
+$wp_customize->add_control(
+    'promo_discount',
+    array(
+        'label'   => 'Discount Text',
+        'section' => 'promo_section',
+        'type'    => 'text',
+    )
+);
 }
 
 add_action(
