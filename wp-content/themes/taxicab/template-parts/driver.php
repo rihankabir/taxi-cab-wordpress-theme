@@ -128,7 +128,29 @@ echo esc_html(
   </div>
 <div class="col-lg-5 col-md-5 col-12  d-flex justify-content-center align-items-center text-center">
   <div class="car mt-5" data-aos="fade-left">
-    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/car section promo.jpg" class="w-100 rounded">
+    <?php
+
+$image = get_theme_mod(
+    'driver_image'
+);
+
+echo wp_get_attachment_image(
+
+    $image,
+
+    'large',
+
+    false,
+
+    array(
+
+        'class' => 'w-100 rounded'
+
+    )
+
+);
+
+?>
   </div>
 </div>
 </div>
