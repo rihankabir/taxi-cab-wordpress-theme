@@ -1,20 +1,25 @@
 <section class="drivers" data-aos="fade-up">
 <div class="container">
-  <div class="row">
+<div class="row">
 
-  <div class="col-lg-7 col-md-7 col-12">
+<div class="col-lg-7 col-md-7 col-12">
 
-    <h2 class="text-start text-bold drivetxt" data-aos="fade-right"><?php
+<h2 class="text-start text-bold drivetxt" data-aos="fade-right">
+
+<?php
 echo esc_html(
     get_theme_mod(
         'driver_small_heading',
         'For Drivers'
     )
 );
-?></h2>
+?>
 
-    <h1 class="text-start text-bold drivetxt1" data-aos="fade-right">
-      <?php
+</h2>
+
+<h1 class="text-start text-bold drivetxt1" data-aos="fade-right">
+
+<?php
 echo esc_html(
     get_theme_mod(
         'driver_heading',
@@ -22,36 +27,52 @@ echo esc_html(
     )
 );
 ?>
-    </h1>
 
-    <div class="driving mt-5">
+</h1>
 
-      <p class="text-start dritxt">
-       <?php
+<div class="driving mt-5">
+
+<p class="text-start dritxt">
+
+<?php
 echo esc_html(
     get_theme_mod(
-        'driver_description'
+        'driver_description',
+        'Quisque sollicitudin feugiat risus, eu posuere ex euismod eu.'
     )
 );
 ?>
-      </p>
 
-      <!-- wrapper added -->
-      <div class="drive-wrapper">
+</p>
 
-        <!-- LEFT SIDE -->
-        <div class="drive-column">
+<div class="drive-wrapper">
+
+<!-- =========================
+LEFT COLUMN
+========================= -->
+
+<div class="drive-column">
+
 <?php
 
 $left_driver = new WP_Query(
+
     array(
+
         'post_type'      => 'driver_benefit',
+
         'posts_per_page' => -1,
+
         'orderby'        => 'menu_order',
+
         'order'          => 'ASC',
+
         'meta_key'       => '_driver_column',
+
         'meta_value'     => 'left'
+
     )
+
 );
 
 if ( $left_driver->have_posts() ) :
@@ -68,17 +89,30 @@ if ( $left_driver->have_posts() ) :
 
 ?>
 
-          <div class="drive-box d-flex align-items-center gap-3 mt-5">
+<div class="drive-box d-flex align-items-center gap-3 mt-5">
 
-            <div class="promo">
-              <span class="num"> <?php echo esc_html( $number ); ?></span>
-            </div>
+<div class="promo">
 
-            <div class="promotxt">
-              <h2 class="txtt1"> <?php the_title(); ?></h2>
-            </div>
+<span class="num">
 
-          </div>
+<?php echo esc_html( $number ); ?>
+
+</span>
+
+</div>
+
+<div class="promotxt">
+
+<h2 class="txtt1">
+
+<?php the_title(); ?>
+
+</h2>
+
+</div>
+
+</div>
+
 <?php
 
     endwhile;
@@ -89,22 +123,34 @@ endif;
 
 ?>
 
-        </div>
+</div>
 
-        <!-- RIGHT SIDE -->
-        <div class="drive-column">
+<!-- =========================
+RIGHT COLUMN
+========================= -->
+
+<div class="drive-column">
 
 <?php
 
 $right_driver = new WP_Query(
+
     array(
+
         'post_type'      => 'driver_benefit',
+
         'posts_per_page' => -1,
+
         'orderby'        => 'menu_order',
+
         'order'          => 'ASC',
+
         'meta_key'       => '_driver_column',
+
         'meta_value'     => 'right'
+
     )
+
 );
 
 if ( $right_driver->have_posts() ) :
@@ -121,20 +167,30 @@ if ( $right_driver->have_posts() ) :
 
 ?>
 
-          <div class="drive-box d-flex align-items-center gap-3 mt-5">
+<div class="drive-box d-flex align-items-center gap-3 mt-5">
 
-            <div class="promo">
-              <span class="num">  <?php echo esc_html( $number ); ?></span>
-            </div>
+<div class="promo">
 
-            <div class="promotxt">
-              <h2 class="txtt1">   <?php the_title(); ?></h2>
-            </div>
+<span class="num">
 
-          </div>
+<?php echo esc_html( $number ); ?>
 
+</span>
 
-    </div>
+</div>
+
+<div class="promotxt">
+
+<h2 class="txtt1">
+
+<?php the_title(); ?>
+
+</h2>
+
+</div>
+
+</div>
+
 <?php
 
     endwhile;
@@ -145,10 +201,23 @@ endif;
 
 ?>
 
-  </div>
-<div class="col-lg-5 col-md-5 col-12  d-flex justify-content-center align-items-center text-center">
-  <div class="car mt-5" data-aos="fade-left">
-    <?php
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- =========================
+RIGHT IMAGE
+========================= -->
+
+<div class="col-lg-5 col-md-5 col-12 d-flex justify-content-center align-items-center text-center">
+
+<div class="car mt-5" data-aos="fade-left">
+
+<?php
 
 $image = get_theme_mod(
     'driver_image'
@@ -163,17 +232,17 @@ echo wp_get_attachment_image(
     false,
 
     array(
-
-        'class' => ' img-fluid w-100 rounded'
-
+        'class' => 'img-fluid w-100 rounded'
     )
 
 );
 
 ?>
-  </div>
-</div>
+
 </div>
 
+</div>
+
+</div>
 </div>
 </section>
