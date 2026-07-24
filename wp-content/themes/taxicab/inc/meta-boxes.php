@@ -693,3 +693,27 @@ add_action(
     'save_post_app_feature',
     'taxi_cab_save_app_feature_meta'
 );
+function taxi_cab_driver_benefit_meta_box() {
+
+    add_meta_box(
+
+        'driver_benefit_meta',
+
+        'Driver Benefit Details',
+
+        'taxi_cab_driver_benefit_meta_callback',
+
+        'driver_benefit',
+
+        'normal',
+
+        'high'
+
+    );
+
+}
+
+add_action(
+    'add_meta_boxes',
+    'taxi_cab_driver_benefit_meta_box'
+);
