@@ -323,6 +323,22 @@ $wp_customize->add_control(
         'type' => 'text',
     )
 );
+$wp_customize->add_setting(
+    'driver_heading',
+    array(
+        'default' => 'Do You Want To Earn With Us?',
+        'sanitize_callback' => 'sanitize_text_field',
+    )
+);
+
+$wp_customize->add_control(
+    'driver_heading',
+    array(
+        'label' => 'Main Heading',
+        'section' => 'driver_section',
+        'type' => 'text',
+    )
+);
 }
 
 add_action(
