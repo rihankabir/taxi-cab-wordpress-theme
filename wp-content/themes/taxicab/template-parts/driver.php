@@ -71,7 +71,7 @@ if ( $left_driver->have_posts() ) :
           <div class="drive-box d-flex align-items-center gap-3 mt-5">
 
             <div class="promo">
-              <span class="num">01</span>
+              <span class="num"> <?php echo esc_html( $number ); ?></span>
             </div>
 
             <div class="promotxt">
