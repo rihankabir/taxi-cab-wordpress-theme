@@ -465,6 +465,22 @@ $wp_customize->add_control(
         )
     )
 );
+$wp_customize->add_setting(
+    'promo_heading_two',
+    array(
+        'default' => 'Business Car Rental',
+        'sanitize_callback' => 'sanitize_text_field',
+    )
+);
+
+$wp_customize->add_control(
+    'promo_heading_two',
+    array(
+        'label'   => 'Banner Two Heading',
+        'section' => 'promo_section',
+        'type'    => 'text',
+    )
+);
 }
 
 add_action(
