@@ -415,6 +415,22 @@ $wp_customize->add_control(
         'type'    => 'text',
     )
 );
+$wp_customize->add_setting(
+    'promo_heading_one',
+    array(
+        'default' => 'ON FIRST ORDER',
+        'sanitize_callback' => 'sanitize_text_field',
+    )
+);
+
+$wp_customize->add_control(
+    'promo_heading_one',
+    array(
+        'label'   => 'Banner One Heading',
+        'section' => 'promo_section',
+        'type'    => 'text',
+    )
+);
 }
 
 add_action(
