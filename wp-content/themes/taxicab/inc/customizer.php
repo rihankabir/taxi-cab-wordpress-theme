@@ -300,6 +300,14 @@ $wp_customize->add_control(
         )
     )
 );
+$wp_customize->add_section(
+    'driver_section',array(
+        'title'=>('Driver Section'),
+         'panel'    => 'taxi_cab_options',
+        'priority' => 9,
+    )
+);
+
 }
 
 add_action(
