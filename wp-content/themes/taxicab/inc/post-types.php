@@ -197,5 +197,58 @@ add_action(
     'init',
     'taxi_cab_app_feature_post_type'
 );
+function taxi_cab_driver_benefit_post_type() {
+
+    $labels = array(
+
+        'name'               => __( 'Driver Benefits', 'taxi-cab' ),
+        'singular_name'      => __( 'Driver Benefit', 'taxi-cab' ),
+        'add_new'            => __( 'Add New Benefit', 'taxi-cab' ),
+        'add_new_item'       => __( 'Add New Driver Benefit', 'taxi-cab' ),
+        'edit_item'          => __( 'Edit Driver Benefit', 'taxi-cab' ),
+        'new_item'           => __( 'New Driver Benefit', 'taxi-cab' ),
+        'view_item'          => __( 'View Driver Benefit', 'taxi-cab' ),
+        'search_items'       => __( 'Search Driver Benefits', 'taxi-cab' ),
+        'not_found'          => __( 'No Driver Benefits Found', 'taxi-cab' ),
+        'menu_name'          => __( 'Driver Benefits', 'taxi-cab' ),
+
+    );
+
+    register_post_type(
+
+        'driver_benefit',
+
+        array(
+
+            'labels'             => $labels,
+
+            'public'             => true,
+
+            'menu_icon'          => 'dashicons-id',
+
+            'supports'           => array(
+
+                'title',
+
+                'page-attributes'
+
+            ),
+
+            'show_in_rest'       => true,
+
+            'has_archive'        => false,
+
+            'publicly_queryable' => false
+
+        )
+
+    );
+
+}
+
+add_action(
+    'init',
+    'taxi_cab_driver_benefit_post_type'
+);
 ?>
 
