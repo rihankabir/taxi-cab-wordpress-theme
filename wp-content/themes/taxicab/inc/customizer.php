@@ -481,6 +481,22 @@ $wp_customize->add_control(
         'type'    => 'text',
     )
 );
+$wp_customize->add_setting(
+    'promo_description_two',
+    array(
+        'default' => 'If U need a Luxury Car for Business, We are here to provide',
+        'sanitize_callback' => 'sanitize_textarea_field',
+    )
+);
+
+$wp_customize->add_control(
+    'promo_description_two',
+    array(
+        'label'   => 'Banner Two Description',
+        'section' => 'promo_section',
+        'type'    => 'textarea',
+    )
+);
 }
 
 add_action(
