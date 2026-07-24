@@ -75,34 +75,19 @@ if ( $left_driver->have_posts() ) :
             </div>
 
             <div class="promotxt">
-              <h2 class="txtt1">Luxury cars</h2>
+              <h2 class="txtt1"> <?php the_title(); ?></h2>
             </div>
 
           </div>
+<?php
 
-          <div class="drive-box d-flex align-items-center gap-3 mt-5">
+    endwhile;
 
-            <div class="promo">
-              <span class="num">02</span>
-            </div>
+    wp_reset_postdata();
 
-            <div class="promotxt">
-              <h2 class="txtt1">No fee</h2>
-            </div>
+endif;
 
-          </div>
-
-          <div class="drive-box d-flex align-items-center gap-3 mt-5">
-
-            <div class="promo">
-              <span class="num">03</span>
-            </div>
-
-            <div class="promotxt">
-              <h2 class="txtt1">Weekly Payment</h2>
-            </div>
-
-          </div>
+?>
 
         </div>
 
