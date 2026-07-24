@@ -381,6 +381,7 @@ $wp_customize->add_section(
         'priority'=>10,
     )
 );
+
 }
 
 add_action(
