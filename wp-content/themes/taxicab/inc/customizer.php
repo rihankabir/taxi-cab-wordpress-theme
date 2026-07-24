@@ -373,6 +373,14 @@ $wp_customize->add_control(
         )
     )
 );
+$wp_customize->add_section(
+    'promo_section',
+    array(
+        'title'=>('Promo Banner'),
+        'panel'=>('taxi_cab_options'),
+        'priority'=>10,
+    )
+);
 }
 
 add_action(
