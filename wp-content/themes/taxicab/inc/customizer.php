@@ -447,6 +447,24 @@ $wp_customize->add_control(
         'type'    => 'text',
     )
 );
+$wp_customize->add_setting(
+    'promo_image_two',
+    array(
+        'sanitize_callback' => 'absint',
+    )
+);
+
+$wp_customize->add_control(
+    new WP_Customize_Media_Control(
+        $wp_customize,
+        'promo_image_two',
+        array(
+            'label'     => 'Banner Two Image',
+            'section'   => 'promo_section',
+            'mime_type' => 'image',
+        )
+    )
+);
 }
 
 add_action(
