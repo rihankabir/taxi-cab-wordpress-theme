@@ -27,9 +27,13 @@ echo esc_html(
     <div class="driving mt-5">
 
       <p class="text-start dritxt">
-        Quisque sollicitudin feugiat risus, eu posuere ex euismod eu.
-        Phasellus hendrerit, massa efficitur dapibus pulvinar,
-        sapien eros sodales ante, euismod aliquet nulla metus a mauris.
+       <?php
+echo esc_html(
+    get_theme_mod(
+        'driver_description'
+    )
+);
+?>
       </p>
 
       <!-- wrapper added -->
