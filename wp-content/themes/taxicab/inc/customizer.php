@@ -431,6 +431,22 @@ $wp_customize->add_control(
         'type'    => 'text',
     )
 );
+$wp_customize->add_setting(
+    'promo_sub_heading',
+    array(
+        'default' => 'SPECIAL OFFER',
+        'sanitize_callback' => 'sanitize_text_field',
+    )
+);
+
+$wp_customize->add_control(
+    'promo_sub_heading',
+    array(
+        'label'   => 'Banner One Sub Heading',
+        'section' => 'promo_section',
+        'type'    => 'text',
+    )
+);
 }
 
 add_action(
