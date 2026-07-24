@@ -14,7 +14,14 @@ echo esc_html(
 ?></h2>
 
     <h1 class="text-start text-bold drivetxt1" data-aos="fade-right">
-      Do You Want To Earn With Us?
+      <?php
+echo esc_html(
+    get_theme_mod(
+        'driver_heading',
+        'Do You Want To Earn With Us?'
+    )
+);
+?>
     </h1>
 
     <div class="driving mt-5">
