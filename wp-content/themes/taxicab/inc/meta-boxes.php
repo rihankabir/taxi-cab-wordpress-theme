@@ -789,3 +789,80 @@ Right
 <?php
 
 }
+function taxi_cab_save_driver_benefit_meta( $post_id ) {
+
+    if (
+
+        ! isset( $_POST['driver_benefit_nonce_field'] ) ||
+
+        ! wp_verify_nonce(
+
+            $_POST['driver_benefit_nonce_field'],
+
+            'driver_benefit_nonce'
+
+        )
+
+    ) {
+
+        return;
+
+    }
+
+    if (
+
+        defined( 'DOING_AUTOSAVE' ) &&
+
+        DOING_AUTOSAVE
+
+    ) {
+
+        return;
+
+    }
+
+    if ( isset( $_POST['driver_number'] ) ) {
+
+        update_post_meta(
+
+            $post_id,
+
+            '_driver_number',
+
+            sanitize_text_field(
+
+                $_POST['driver_number']
+
+            )
+
+        );
+
+    }
+
+    if ( isset( $_POST['driver_column'] ) ) {
+
+        update_post_meta(
+
+            $post_id,
+
+            '_driver_column',
+
+            sanitize_text_field(
+
+                $_POST['driver_column']
+
+            )
+
+        );
+
+    }
+
+}
+
+add_action(
+
+    'save_post_driver_benefit',
+
+    'taxi_cab_save_driver_benefit_meta'
+
+);
