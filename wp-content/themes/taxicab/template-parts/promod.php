@@ -1,30 +1,118 @@
 <section class="promod">
-  <div class="container">
-    <div class="row">
+<div class="container">
+<div class="row">
+
 <div class="col-lg-6 col-md-6 col-12">
-  <div class="promo-banner">
 
-    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/promo1.jpg" alt="promo banner" class="img-fluid rounded">
+<div class="promo-banner">
 
-    <div class="hero-content">
-        <h1 class="text promotxts"><span class="worldtxt">-50%</span> ON FIRST ORDER</h1>
-        <h2 class="text">SPECIAL OFFER</h2>
-    </div>
+<?php
+echo wp_get_attachment_image(
+    get_theme_mod('promo_image_one'),
+    'large',
+    false,
+    array(
+        'class' => 'img-fluid rounded'
+    )
+);
+?>
+
+<div class="hero-content">
+
+<h1 class="text promotxts">
+
+<span class="worldtxt">
+
+<?php
+echo esc_html(
+    get_theme_mod(
+        'promo_discount',
+        '-50%'
+    )
+);
+?>
+
+</span>
+
+<?php
+echo esc_html(
+    get_theme_mod(
+        'promo_heading_one',
+        'ON FIRST ORDER'
+    )
+);
+?>
+
+</h1>
+
+<h2 class="text">
+
+<?php
+echo esc_html(
+    get_theme_mod(
+        'promo_sub_heading',
+        'SPECIAL OFFER'
+    )
+);
+?>
+
+</h2>
 
 </div>
+
 </div>
+
+</div>
+
 <div class="col-lg-6 col-md-6 col-12">
-  <div class="promo-banner">
 
-    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/promo2.jpg" alt="promo banner" class="img-fluid rounded">
+<div class="promo-banner">
 
-    <div class="hero-content">
-        <h1 class="text-center cartxt">Business Car Rental</h1>
-        <p class="text-center">If U need a Luxury Car for Business,We are here to provide</p>
-    </div>
+<?php
+echo wp_get_attachment_image(
+    get_theme_mod('promo_image_two'),
+    'large',
+    false,
+    array(
+        'class' => 'img-fluid rounded'
+    )
+);
+?>
+
+<div class="hero-content">
+
+<h1 class="text-center cartxt">
+
+<?php
+echo esc_html(
+    get_theme_mod(
+        'promo_heading_two',
+        'Business Car Rental'
+    )
+);
+?>
+
+</h1>
+
+<p class="text-center">
+
+<?php
+echo esc_html(
+    get_theme_mod(
+        'promo_description_two',
+        'If U need a Luxury Car for Business, We are here to provide'
+    )
+);
+?>
+
+</p>
+
+</div>
+
+</div>
+
+</div>
 
 </div>
 </div>
-    </div>
-  </div>
 </section>
