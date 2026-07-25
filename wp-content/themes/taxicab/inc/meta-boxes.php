@@ -866,3 +866,18 @@ add_action(
     'taxi_cab_save_driver_benefit_meta'
 
 );
+function taxi_cab_brand_meta_box() {
+
+    add_meta_box(
+        'brand_details',
+        'Brand Details',
+        'taxi_cab_brand_callback',
+        'brand'
+    );
+
+}
+
+add_action(
+    'add_meta_boxes',
+    'taxi_cab_brand_meta_box'
+);
