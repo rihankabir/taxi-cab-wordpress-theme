@@ -510,6 +510,35 @@ array(
 )
 
 );
+$wp_customize->add_setting(
+
+'brand_small_heading',
+
+array(
+
+'default'=>'OUR PARTNERS',
+
+'sanitize_callback'=>'sanitize_text_field'
+
+)
+
+);
+
+$wp_customize->add_control(
+
+'brand_small_heading',
+
+array(
+
+'label'=>'Small Heading',
+
+'section'=>'brand_section',
+
+'type'=>'text'
+
+)
+
+);
 }
 
 add_action(
