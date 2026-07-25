@@ -250,5 +250,38 @@ add_action(
     'init',
     'taxi_cab_driver_benefit_post_type'
 );
+function taxi_cab_brand_post_type() {
+
+    register_post_type(
+        'brand',
+        array(
+
+            'labels' => array(
+                'name'          => 'Brands',
+                'singular_name' => 'Brand',
+                'add_new_item'  => 'Add New Brand',
+            ),
+
+            'public' => true,
+
+            'menu_icon' => 'dashicons-groups',
+
+            'supports' => array(
+                'title',
+                'thumbnail',
+                'page-attributes'
+            ),
+
+            'show_in_rest' => true,
+
+        )
+    );
+
+}
+
+add_action(
+    'init',
+    'taxi_cab_brand_post_type'
+);
 ?>
 
