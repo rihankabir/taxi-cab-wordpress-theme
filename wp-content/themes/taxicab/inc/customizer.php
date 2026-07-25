@@ -539,6 +539,35 @@ array(
 )
 
 );
+$wp_customize->add_setting(
+
+'brand_heading',
+
+array(
+
+'default'=>'AND CLIENTS',
+
+'sanitize_callback'=>'sanitize_text_field'
+
+)
+
+);
+
+$wp_customize->add_control(
+
+'brand_heading',
+
+array(
+
+'label'=>'Main Heading',
+
+'section'=>'brand_section',
+
+'type'=>'text'
+
+)
+
+);
 }
 
 add_action(
