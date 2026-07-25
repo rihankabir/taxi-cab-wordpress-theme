@@ -906,3 +906,27 @@ style="width:100%;">
 <?php
 
 }
+function taxi_cab_save_brand( $post_id ) {
+
+if ( isset( $_POST['brand_url'] ) ) {
+
+update_post_meta(
+
+$post_id,
+
+'_brand_url',
+
+esc_url_raw(
+$_POST['brand_url']
+)
+
+);
+
+}
+
+}
+
+add_action(
+'save_post',
+'taxi_cab_save_brand'
+);
