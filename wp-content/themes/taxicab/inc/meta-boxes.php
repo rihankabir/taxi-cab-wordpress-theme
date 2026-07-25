@@ -881,3 +881,28 @@ add_action(
     'add_meta_boxes',
     'taxi_cab_brand_meta_box'
 );
+function taxi_cab_brand_callback( $post ) {
+
+$url = get_post_meta(
+    $post->ID,
+    '_brand_url',
+    true
+);
+
+?>
+
+<p>
+
+<label>Website URL</label>
+
+<input
+type="url"
+name="brand_url"
+value="<?php echo esc_attr( $url ); ?>"
+style="width:100%;">
+
+</p>
+
+<?php
+
+}
