@@ -497,6 +497,19 @@ $wp_customize->add_control(
         'type'    => 'textarea',
     )
 );
+$wp_customize->add_section(
+
+'brand_section',
+
+array(
+
+'title'=>'Brands',
+
+'panel'=>'taxi_cab_options'
+
+)
+
+);
 }
 
 add_action(
