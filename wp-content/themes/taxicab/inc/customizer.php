@@ -606,6 +606,12 @@ $wp_customize->add_control(
         'type'    => 'email',
     )
 );
+$wp_customize->add_setting(
+    'facebook_url',
+    array(
+        'sanitize_callback' => 'esc_url_raw',
+    )
+);
 }
 
 add_action(
