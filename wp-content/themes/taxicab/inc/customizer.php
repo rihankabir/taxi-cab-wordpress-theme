@@ -620,6 +620,12 @@ $wp_customize->add_control(
         'type'    => 'url',
     )
 );
+$wp_customize->add_setting(
+    'twitter_url',
+    array(
+        'sanitize_callback' => 'esc_url_raw',
+    )
+);
 }
 
 add_action(
