@@ -109,14 +109,30 @@ echo nl2br(
 
       <p class="address mb-2">
         <i class="fa-solid fa-phone phone me-2"></i>
-        +44 20 7946 0123
+        <?php
+echo esc_html(
+    get_theme_mod(
+        'footer_phone'
+    )
+);
+?>
       </p>
 
       <p class="address mb-2">
         <i class="fa-solid fa-envelope envelope me-2"></i>
-        <a href="#" class="text-decoration-none emaillink">
-          gettaxi@taxicab.co.uk
-        </a>
+        <a
+href="mailto:<?php echo esc_attr(get_theme_mod('footer_email')); ?>"
+class="text-decoration-none emaillink">
+
+<?php
+echo esc_html(
+    get_theme_mod(
+        'footer_email'
+    )
+);
+?>
+
+</a>
       </p>
 
     </div>
