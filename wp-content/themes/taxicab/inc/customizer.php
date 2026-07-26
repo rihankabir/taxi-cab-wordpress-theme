@@ -733,6 +733,22 @@ $wp_customize->add_control(
         'type'=>'text'
     )
 );
+$wp_customize->add_setting(
+    'footer_address',
+    array(
+        'default'=>'56/Taylor Road, London, United Kingdom',
+        'sanitize_callback'=>'sanitize_textarea_field'
+    )
+);
+
+$wp_customize->add_control(
+    'footer_address',
+    array(
+        'label'=>'Address',
+        'section'=>'footer_settings',
+        'type'=>'textarea'
+    )
+);
 }
 
 add_action(
