@@ -749,6 +749,22 @@ $wp_customize->add_control(
         'type'=>'textarea'
     )
 );
+$wp_customize->add_setting(
+    'footer_phone',
+    array(
+        'default'=>'+44 20 7946 0123',
+        'sanitize_callback'=>'sanitize_text_field'
+    )
+);
+
+$wp_customize->add_control(
+    'footer_phone',
+    array(
+        'label'=>'Phone',
+        'section'=>'footer_settings',
+        'type'=>'text'
+    )
+);
 }
 
 add_action(
