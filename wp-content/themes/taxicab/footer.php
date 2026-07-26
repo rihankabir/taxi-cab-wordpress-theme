@@ -4,7 +4,15 @@
 
     <!-- ABOUT -->
     <div class="col-12 col-md-6 col-lg-4">
-      <h2 class="FTXT mb-3">ABOUT US</h2>
+      <h2 class="FTXT mb-3"><?php
+echo esc_html(
+    get_theme_mod(
+        'footer_about_title',
+        'ABOUT US'
+    )
+);
+?>
+</h2>
 
       <p class="ftxtp">
         Trusted by thousands of passengers, our taxi service delivers dependable transportation with a focus on safety, comfort, and efficiency.
