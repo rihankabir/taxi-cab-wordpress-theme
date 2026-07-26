@@ -79,9 +79,16 @@ echo esc_html(
 <?php endif; ?>
 
 
-                    <a href="#">
-                        <i class="fa-brands fa-twitter"></i>
-                    </a>
+                    <?php if ( get_theme_mod( 'twitter_url' ) ) : ?>
+
+<a href="<?php echo esc_url( get_theme_mod( 'twitter_url' ) ); ?>" target="_blank">
+
+<i class="fa-brands fa-twitter"></i>
+
+</a>
+
+<?php endif; ?>
+
 
                     <a href="#">
                         <i class="fa-brands fa-instagram"></i>
