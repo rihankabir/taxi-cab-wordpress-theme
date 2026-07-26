@@ -85,11 +85,26 @@ wp_nav_menu(
     <!-- CONTACT -->
     <div class="col-12 col-md-12 col-lg-3">
 
-      <h2 class="ctxt mb-3">CONTACT US</h2>
+      <h2 class="ctxt mb-3"><?php
+echo esc_html(
+    get_theme_mod(
+        'footer_contact_title',
+        'CONTACT US'
+    )
+);
+?></h2>
 
       <p class="address mb-2">
         <strong class="address">Address:</strong>
-        56/Taylor Road, London, United Kingdom
+       <?php
+echo nl2br(
+    esc_html(
+        get_theme_mod(
+            'footer_address'
+        )
+    )
+);
+?>
       </p>
 
       <p class="address mb-2">
