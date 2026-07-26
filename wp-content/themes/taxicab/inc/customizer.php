@@ -568,6 +568,14 @@ array(
 )
 
 );
+$wp_customize->add_section(
+    'top_header_section',
+    array(
+        'title'    => __('Top Header', 'taxi-cab'),
+        'panel'    => 'taxi_cab_options',
+        'priority' => 2,
+    )
+);
 }
 
 add_action(
