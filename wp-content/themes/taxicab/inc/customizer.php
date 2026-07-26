@@ -677,6 +677,15 @@ $wp_customize->add_setting(
         'sanitize_callback'=>'sanitize_text_field',
     )
 );
+$wp_customize->add_control(
+    'footer_about_title',
+    array(
+        'label'=>'About Title',
+        'section'=>'footer_settings',
+        'type'=>'text',
+    )
+);
+
 
 }
 
