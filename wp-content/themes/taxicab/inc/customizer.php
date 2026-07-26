@@ -598,6 +598,14 @@ $wp_customize->add_setting(
         'sanitize_callback' => 'sanitize_email',
     )
 );
+$wp_customize->add_control(
+    'top_email',
+    array(
+        'label'   => 'Email Address',
+        'section' => 'top_header_section',
+        'type'    => 'email',
+    )
+);
 }
 
 add_action(
