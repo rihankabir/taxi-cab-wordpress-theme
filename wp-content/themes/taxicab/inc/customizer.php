@@ -670,6 +670,13 @@ array(
 )
 
 );
+$wp_customize->add_setting(
+    'footer_about_title',
+    array(
+        'default'=>'ABOUT US',
+        'sanitize_callback'=>'sanitize_text_field',
+    )
+);
 
 }
 
