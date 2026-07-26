@@ -781,6 +781,22 @@ $wp_customize->add_control(
         'type'=>'email'
     )
 );
+$wp_customize->add_setting(
+    'footer_copyright',
+    array(
+        'default'=>'All Rights Reserved.',
+        'sanitize_callback'=>'sanitize_text_field'
+    )
+);
+
+$wp_customize->add_control(
+    'footer_copyright',
+    array(
+        'label'=>'Copyright Text',
+        'section'=>'footer_settings',
+        'type'=>'text'
+    )
+);
 }
 
 add_action(
