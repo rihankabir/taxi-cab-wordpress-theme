@@ -26,10 +26,37 @@ echo esc_html(
 
       <div class="social-footer mt-3">
 
-        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="#"><i class="fa-brands fa-twitter"></i></a>
-        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+       <?php if(get_theme_mod('facebook_url')): ?>
+
+<a href="<?php echo esc_url(get_theme_mod('facebook_url')); ?>" target="_blank">
+<i class="fa-brands fa-facebook-f"></i>
+</a>
+
+<?php endif; ?>
+
+<?php if(get_theme_mod('twitter_url')): ?>
+
+<a href="<?php echo esc_url(get_theme_mod('twitter_url')); ?>" target="_blank">
+<i class="fa-brands fa-twitter"></i>
+</a>
+
+<?php endif; ?>
+
+<?php if(get_theme_mod('instagram_url')): ?>
+
+<a href="<?php echo esc_url(get_theme_mod('instagram_url')); ?>" target="_blank">
+<i class="fa-brands fa-instagram"></i>
+</a>
+
+<?php endif; ?>
+
+<?php if(get_theme_mod('linkedin_url')): ?>
+
+<a href="<?php echo esc_url(get_theme_mod('linkedin_url')); ?>" target="_blank">
+<i class="fa-brands fa-linkedin-in"></i>
+</a>
+
+<?php endif; ?>
 
       </div>
     </div>
@@ -147,7 +174,14 @@ echo esc_html(
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
-        <p class="ftxt text-center "><span class="f2txt"></span>© <?php echo date('Y'); ?> <?php bloginfo('name'); ?> . All Rights Reserved.</p>
+        <p class="ftxt text-center "><span class="f2txt"></span>© <?php echo date('Y'); ?> <?php bloginfo('name'); ?> <?php
+echo esc_html(
+    get_theme_mod(
+        'footer_copyright',
+        'All Rights Reserved.'
+    )
+);
+?></p>
       </div>
     </div>
   </div>
