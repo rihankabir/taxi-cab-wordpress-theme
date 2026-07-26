@@ -68,9 +68,16 @@ echo esc_html(
 
                 <div class="top-social">
 
-                    <a href="#">
-                        <i class="fa-brands fa-facebook-f"></i>
-                    </a>
+                   <?php if ( get_theme_mod( 'facebook_url' ) ) : ?>
+
+<a href="<?php echo esc_url( get_theme_mod( 'facebook_url' ) ); ?>" target="_blank">
+
+<i class="fa-brands fa-facebook-f"></i>
+
+</a>
+
+<?php endif; ?>
+
 
                     <a href="#">
                         <i class="fa-brands fa-twitter"></i>
