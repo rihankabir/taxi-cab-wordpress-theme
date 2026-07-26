@@ -685,7 +685,22 @@ $wp_customize->add_control(
         'type'=>'text',
     )
 );
+$wp_customize->add_setting(
+    'footer_about_text',
+    array(
+        'default' => 'Trusted by thousands of passengers, our taxi service delivers dependable transportation with a focus on safety, comfort, and efficiency.',
+        'sanitize_callback' => 'sanitize_textarea_field',
+    )
+);
 
+$wp_customize->add_control(
+    'footer_about_text',
+    array(
+        'label'   => 'About Description',
+        'section' => 'footer_settings',
+        'type'    => 'textarea',
+    )
+);
 
 }
 
