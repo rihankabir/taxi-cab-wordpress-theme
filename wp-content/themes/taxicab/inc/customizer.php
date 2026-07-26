@@ -583,6 +583,14 @@ $wp_customize->add_setting(
         'sanitize_callback' => 'sanitize_text_field',
     )
 );
+$wp_customize->add_control(
+    'top_phone',
+    array(
+        'label'   => 'Phone Number',
+        'section' => 'top_header_section',
+        'type'    => 'text',
+    )
+);
 }
 
 add_action(
