@@ -100,10 +100,15 @@ echo esc_html(
 
 <?php endif; ?>
 
-                    <a href="#">
-                        <i class="fa-brands fa-linkedin-in"></i>
-                    </a>
+                    <?php if ( get_theme_mod( 'linkedin_url' ) ) : ?>
 
+<a href="<?php echo esc_url( get_theme_mod( 'linkedin_url' ) ); ?>" target="_blank">
+
+<i class="fa-brands fa-linkedin-in"></i>
+
+</a>
+
+<?php endif; ?>
                 </div>
 
             </div>
