@@ -662,6 +662,15 @@ $wp_customize->add_control(
         'type'    => 'url',
     )
 );
+$wp_customize->add_section(
+'footer_settings',
+array(
+'title'=>('Footer Settings'),
+'priority'=>200,
+)
+
+);
+
 }
 
 add_action(
