@@ -640,6 +640,14 @@ $wp_customize->add_setting(
         'sanitize_callback' => 'esc_url_raw',
     )
 );
+$wp_customize->add_control(
+    'instagram_url',
+    array(
+        'label'   => 'Instagram URL',
+        'section' => 'top_header_section',
+        'type'    => 'url',
+    )
+);
 }
 
 add_action(
