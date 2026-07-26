@@ -717,6 +717,22 @@ $wp_customize->add_control(
         'type'=>'text'
     )
 );
+$wp_customize->add_setting(
+    'footer_contact_title',
+    array(
+        'default'=>'CONTACT US',
+        'sanitize_callback'=>'sanitize_text_field'
+    )
+);
+
+$wp_customize->add_control(
+    'footer_contact_title',
+    array(
+        'label'=>'Contact Title',
+        'section'=>'footer_settings',
+        'type'=>'text'
+    )
+);
 }
 
 add_action(
