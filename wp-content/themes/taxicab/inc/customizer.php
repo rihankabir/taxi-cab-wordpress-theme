@@ -612,6 +612,14 @@ $wp_customize->add_setting(
         'sanitize_callback' => 'esc_url_raw',
     )
 );
+$wp_customize->add_control(
+    'facebook_url',
+    array(
+        'label'   => 'Facebook URL',
+        'section' => 'top_header_section',
+        'type'    => 'url',
+    )
+);
 }
 
 add_action(
