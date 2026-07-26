@@ -701,7 +701,22 @@ $wp_customize->add_control(
         'type'    => 'textarea',
     )
 );
+$wp_customize->add_setting(
+    'footer_explore_title',
+    array(
+        'default'=>'EXPLORE',
+        'sanitize_callback'=>'sanitize_text_field'
+    )
+);
 
+$wp_customize->add_control(
+    'footer_explore_title',
+    array(
+        'label'=>'Explore Title',
+        'section'=>'footer_settings',
+        'type'=>'text'
+    )
+);
 }
 
 add_action(
