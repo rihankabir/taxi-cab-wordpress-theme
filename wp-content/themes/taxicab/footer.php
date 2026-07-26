@@ -15,7 +15,13 @@ echo esc_html(
 </h2>
 
       <p class="ftxtp">
-        Trusted by thousands of passengers, our taxi service delivers dependable transportation with a focus on safety, comfort, and efficiency.
+      <?php
+echo esc_html(
+    get_theme_mod(
+        'footer_about_text'
+    )
+);
+?>
       </p>
 
       <div class="social-footer mt-3">
@@ -31,7 +37,14 @@ echo esc_html(
     <!-- EXPLORE -->
     <div class="col-12 col-md-6 col-lg-5">
 
-      <h2 class="extxt mb-4">EXPLORE</h2>
+      <h2 class="extxt mb-4"><?php
+echo esc_html(
+    get_theme_mod(
+        'footer_explore_title',
+        'EXPLORE'
+    )
+);
+?></h2>
 
       <div class="row">
 
