@@ -576,6 +576,13 @@ $wp_customize->add_section(
         'priority' => 2,
     )
 );
+$wp_customize->add_setting(
+    'top_phone',
+    array(
+        'default' => '+44 20 7946 0123',
+        'sanitize_callback' => 'sanitize_text_field',
+    )
+);
 }
 
 add_action(
