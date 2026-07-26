@@ -90,9 +90,15 @@ echo esc_html(
 <?php endif; ?>
 
 
-                    <a href="#">
-                        <i class="fa-brands fa-instagram"></i>
-                    </a>
+                   <?php if ( get_theme_mod( 'instagram_url' ) ) : ?>
+
+<a href="<?php echo esc_url( get_theme_mod( 'instagram_url' ) ); ?>" target="_blank">
+
+<i class="fa-brands fa-instagram"></i>
+
+</a>
+
+<?php endif; ?>
 
                     <a href="#">
                         <i class="fa-brands fa-linkedin-in"></i>
