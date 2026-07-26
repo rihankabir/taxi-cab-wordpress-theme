@@ -591,6 +591,13 @@ $wp_customize->add_control(
         'type'    => 'text',
     )
 );
+$wp_customize->add_setting(
+    'top_email',
+    array(
+        'default' => 'gettaxi@taxicab.co.uk',
+        'sanitize_callback' => 'sanitize_email',
+    )
+);
 }
 
 add_action(
