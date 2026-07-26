@@ -30,10 +30,20 @@
 
                 <div class="top-contact">
 
-                    <a href="#">
-                        <i class="fa-solid fa-phone"></i>
-                         +44 20 7946 0123
-                    </a>
+                    <a href="tel:<?php echo esc_attr( get_theme_mod( 'top_phone', '+44 20 7946 0123' ) ); ?>">
+
+<i class="fa-solid fa-phone"></i>
+
+<?php
+echo esc_html(
+    get_theme_mod(
+        'top_phone',
+        '+44 20 7946 0123'
+    )
+);
+?>
+
+</a>
 
                     <a href="#">
                         <i class="fa-solid fa-envelope"></i>
