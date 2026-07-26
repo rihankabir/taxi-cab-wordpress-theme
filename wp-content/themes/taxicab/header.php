@@ -44,11 +44,20 @@ echo esc_html(
 ?>
 
 </a>
+<a href="mailto:<?php echo esc_attr( get_theme_mod( 'top_email', 'gettaxi@taxicab.co.uk' ) ); ?>">
 
-                    <a href="#">
-                        <i class="fa-solid fa-envelope"></i>
-                        gettaxi@taxicab.co.uk
-                    </a>
+<i class="fa-solid fa-envelope"></i>
+
+<?php
+echo esc_html(
+    get_theme_mod(
+        'top_email',
+        'gettaxi@taxicab.co.uk'
+    )
+);
+?>
+
+</a>
 
                 </div>
 
