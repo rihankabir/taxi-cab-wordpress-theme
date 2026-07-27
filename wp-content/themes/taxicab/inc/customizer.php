@@ -901,6 +901,35 @@ $wp_customize->add_control(
     )
 
 );
+$wp_customize->add_setting(
+
+    'about_banner_breadcrumb',
+
+    array(
+
+        'default' => 'About Us',
+
+        'sanitize_callback' => 'sanitize_text_field',
+
+    )
+
+);
+
+$wp_customize->add_control(
+
+    'about_banner_breadcrumb',
+
+    array(
+
+        'label' => 'Breadcrumb Title',
+
+        'section' => 'about_page_banner',
+
+        'type' => 'text',
+
+    )
+
+);
 }
 
 add_action(
