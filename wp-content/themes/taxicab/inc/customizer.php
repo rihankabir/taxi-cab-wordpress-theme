@@ -810,6 +810,39 @@ $wp_customize->add_section(
     )
 
 );
+$wp_customize->add_setting(
+
+    'about_banner_image',
+
+    array(
+
+        'sanitize_callback' => 'absint',
+
+    )
+
+);
+
+$wp_customize->add_control(
+
+    new WP_Customize_Media_Control(
+
+        $wp_customize,
+
+        'about_banner_image',
+
+        array(
+
+            'label' => 'Banner Background',
+
+            'section' => 'about_page_banner',
+
+            'mime_type' => 'image',
+
+        )
+
+    )
+
+);
 }
 
 add_action(
