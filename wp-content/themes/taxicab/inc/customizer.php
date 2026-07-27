@@ -843,6 +843,35 @@ $wp_customize->add_control(
     )
 
 );
+$wp_customize->add_setting(
+
+    'about_banner_small_heading',
+
+    array(
+
+        'default' => 'Welcome',
+
+        'sanitize_callback' => 'sanitize_text_field',
+
+    )
+
+);
+
+$wp_customize->add_control(
+
+    'about_banner_small_heading',
+
+    array(
+
+        'label' => 'Small Heading',
+
+        'section' => 'about_page_banner',
+
+        'type' => 'text',
+
+    )
+
+);
 }
 
 add_action(
