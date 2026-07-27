@@ -5,10 +5,32 @@ Template Name: About Page
 get_header();
 ?>
 <!--navbar ends-->
-<section class="breadcumb-about">
+<?php
+$banner_image = wp_get_attachment_image_url(
+    get_theme_mod( 'about_banner_image' ),
+    'full'
+);
+?>
+<section class="breadcumb-about" style="background-image: url('<?php echo esc_url( $banner_image ); ?>');">
+    
+
     <div class="container-fluid">
         <div class="row">
-<h2 class="text-center about-txt mt-5">About Us</h2>
+<h2 class="text-center about-txt mt-5"><?php
+
+echo esc_html(
+
+get_theme_mod(
+
+'about_banner_heading',
+
+'About Us'
+
+)
+
+);
+
+?></h2>
         </div>
     </div>
 </section>
@@ -18,8 +40,26 @@ get_header();
             <div class="col-lg-12">
                 <nav class="custom-breadcrumb" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item text-decoration-none"><a href="index.html" class="text-decoration-none text-dark">Home</a></li>
-    <li class="breadcrumb-item active brtxt" aria-current="page">About Us</li>
+    <li class="breadcrumb-item text-decoration-none"><a href="<?php echo esc_url(home_url('/')); ?>"class="text-decoration-none text-dark">
+
+Home
+
+</a></li>
+    <li class="breadcrumb-item active brtxt" aria-current="page"><?php
+
+echo esc_html(
+
+get_theme_mod(
+
+'about_banner_breadcrumb',
+
+'About Us'
+
+)
+
+);
+
+?></li>
   </ol>
 </nav>
             </div>
