@@ -797,6 +797,19 @@ $wp_customize->add_control(
         'type'=>'text'
     )
 );
+$wp_customize->add_section(
+
+    'about_page_banner',
+
+    array(
+
+        'title' => __('About Page Banner', 'taxi-cab'),
+
+        'priority' => 1,
+
+    )
+
+);
 }
 
 add_action(
