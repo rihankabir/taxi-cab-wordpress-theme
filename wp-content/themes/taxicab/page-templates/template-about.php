@@ -19,7 +19,7 @@ get_header();
                 <nav class="custom-breadcrumb" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item text-decoration-none"><a href="index.html" class="text-decoration-none text-dark">Home</a></li>
-    <li class="breadcrumb-item active brtxt" aria-current="page">Library</li>
+    <li class="breadcrumb-item active brtxt" aria-current="page">About Us</li>
   </ol>
 </nav>
             </div>
