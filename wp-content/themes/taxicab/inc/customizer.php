@@ -938,9 +938,26 @@ $wp_customize->add_section(
     )
 );
 $wp_customize->add_setting(
+    'about_intro_yellow_text',
+    array(
+        'default' => 'WHO',
+        'sanitize_callback' => 'sanitize_text_field',
+    )
+);
+
+$wp_customize->add_control(
+    'about_intro_yellow_text',
+    array(
+        'label'   => 'Yellow Word',
+        'section' => 'about_intro_section',
+        'type'    => 'text',
+    )
+);
+
+$wp_customize->add_setting(
     'about_intro_heading',
     array(
-        'default' => 'WHO WE ARE',
+        'default' => 'WE ARE',
         'sanitize_callback' => 'sanitize_text_field',
     )
 );
@@ -948,7 +965,7 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
     'about_intro_heading',
     array(
-        'label'   => 'Heading',
+        'label'   => 'Main Heading',
         'section' => 'about_intro_section',
         'type'    => 'text',
     )
