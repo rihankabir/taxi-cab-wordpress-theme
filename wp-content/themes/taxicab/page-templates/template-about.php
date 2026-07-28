@@ -215,7 +215,11 @@ array(
 </section>
 
 <!--intro section ends -->
-  <section class="partner-section">
+
+<!--partner section starts -->
+
+
+  <section class ="partner-section">
 
     <div class="overlay"></div>
 
@@ -254,6 +258,7 @@ array(
     </div>
 
 </section>
+<!-- partner section ends-->
 <!--=============================
     TESTIMONIAL AREA START
 ==============================-->
