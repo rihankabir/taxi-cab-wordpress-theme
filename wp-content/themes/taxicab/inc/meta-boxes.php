@@ -1007,3 +1007,64 @@ style="width:100%;">
 <?php
 
 }
+function taxi_cab_save_about_counter( $post_id ) {
+
+    if ( ! isset( $_POST['about_counter_nonce'] ) ) {
+
+        return;
+
+    }
+
+    if ( ! wp_verify_nonce(
+        $_POST['about_counter_nonce'],
+        'about_counter_nonce'
+    ) ) {
+
+        return;
+
+    }
+
+    if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+
+        return;
+
+    }
+
+    if ( isset( $_POST['about_counter_number'] ) ) {
+
+        update_post_meta(
+
+            $post_id,
+
+            '_about_counter_number',
+
+            sanitize_text_field(
+                $_POST['about_counter_number']
+            )
+
+        );
+
+    }
+
+    if ( isset( $_POST['about_counter_symbol'] ) ) {
+
+        update_post_meta(
+
+            $post_id,
+
+            '_about_counter_symbol',
+
+            sanitize_text_field(
+                $_POST['about_counter_symbol']
+            )
+
+        );
+
+    }
+
+}
+
+add_action(
+    'save_post_about_counter',
+    'taxi_cab_save_about_counter'
+);
