@@ -337,3 +337,51 @@ add_action(
     'init',
     'taxi_cab_about_counter_cpt'
 );
+<?php
+
+function taxi_cab_about_partner_cpt() {
+
+    $labels = array(
+        'name'               => 'About Partners',
+        'singular_name'      => 'About Partner',
+        'add_new_item'       => 'Add New Partner',
+        'edit_item'          => 'Edit Partner',
+        'all_items'          => 'All Partners',
+        'menu_name'          => 'About Partners',
+    );
+
+    $args = array(
+
+        'labels' => $labels,
+
+        'public' => true,
+
+        'show_ui' => true,
+
+        'show_in_menu' => true,
+
+        'publicly_queryable' => false,
+
+        'has_archive' => false,
+
+        'menu_icon' => 'dashicons-groups',
+
+        'supports' => array(
+            'title',
+            'thumbnail',
+            'page-attributes'
+        )
+
+    );
+
+    register_post_type(
+        'about_partner',
+        $args
+    );
+
+}
+
+add_action(
+    'init',
+    'taxi_cab_about_partner_cpt'
+);
