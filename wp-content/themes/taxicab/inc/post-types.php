@@ -337,7 +337,7 @@ add_action(
     'init',
     'taxi_cab_about_counter_cpt'
 );
-<?php
+
 
 function taxi_cab_about_partner_cpt() {
 
