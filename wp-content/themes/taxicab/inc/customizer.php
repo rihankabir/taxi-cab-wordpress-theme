@@ -959,7 +959,13 @@ $wp_customize->add_control(
         'type'    => 'text',
     )
 );
-
+$wp_customize->add_setting(
+    'about_intro_description',
+    array(
+        'default' => '',
+        'sanitize_callback' => 'sanitize_textarea_field',
+    )
+);
 }
 
 add_action(
