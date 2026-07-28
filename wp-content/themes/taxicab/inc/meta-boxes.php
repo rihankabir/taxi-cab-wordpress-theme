@@ -954,3 +954,56 @@ add_action(
     'add_meta_boxes',
     'taxi_cab_about_counter_meta_box'
 );
+function taxi_cab_about_counter_callback( $post ) {
+
+    wp_nonce_field(
+        'about_counter_nonce',
+        'about_counter_nonce'
+    );
+
+    $number = get_post_meta(
+        $post->ID,
+        '_about_counter_number',
+        true
+    );
+
+    $symbol = get_post_meta(
+        $post->ID,
+        '_about_counter_symbol',
+        true
+    );
+
+?>
+
+<p>
+
+<label><strong>Counter Number</strong></label>
+
+<br>
+
+<input
+type="number"
+name="about_counter_number"
+value="<?php echo esc_attr( $number ); ?>"
+style="width:100%;">
+
+</p>
+
+<p>
+
+<label><strong>Counter Symbol</strong></label>
+
+<br>
+
+<input
+type="text"
+name="about_counter_symbol"
+value="<?php echo esc_attr( $symbol ); ?>"
+placeholder="+ or %"
+style="width:100%;">
+
+</p>
+
+<?php
+
+}
