@@ -937,6 +937,28 @@ $wp_customize->add_section(
         'priority' => 2,
     )
 );
+$wp_customize->add_setting(
+    'about_intro_heading',
+    array(
+        'default' => 'WHO WE ARE',
+        'sanitize_callback' => 'sanitize_text_field',
+    )
+);
+$wp_customize->add_setting(
+    'about_intro_heading',
+    array(
+        'default' => 'WHO WE ARE',
+        'sanitize_callback' => 'sanitize_text_field',
+    )
+);
+$wp_customize->add_control(
+    'about_intro_heading',
+    array(
+        'label'   => 'Heading',
+        'section' => 'about_intro_section',
+        'type'    => 'text',
+    )
+);
 
 }
 
