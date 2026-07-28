@@ -66,7 +66,142 @@ get_theme_mod(
         </div>
     </div>
 </section>
+<!--intro section start -->
+<section class="intro">
 
+<div class="container">
+
+<div class="row align-items-center">
+
+<div class="col-lg-6">
+
+<h1 class="text-start mb-4">
+
+<?php
+echo esc_html(
+get_theme_mod(
+'about_intro_heading',
+'WHO WE ARE'
+)
+);
+?>
+
+</h1>
+
+<p class="mb-5">
+
+<?php
+echo nl2br(
+esc_html(
+get_theme_mod(
+'about_intro_description'
+)
+)
+);
+?>
+
+</p>
+
+<div class="row">
+
+<?php
+
+$counter = new WP_Query(
+    array(
+        'post_type'      => 'about_counter',
+        'posts_per_page' => -1,
+        'orderby'        => 'menu_order',
+        'order'          => 'ASC'
+    )
+);
+
+if($counter->have_posts()) :
+
+while($counter->have_posts()) :
+
+$counter->the_post();
+
+$number = get_post_meta(
+    get_the_ID(),
+    '_about_counter_number',
+    true
+);
+
+$symbol = get_post_meta(
+    get_the_ID(),
+    '_about_counter_symbol',
+    true
+);
+
+?>
+
+<div class="col-4">
+
+<h2
+class="counter"
+data-target="<?php echo esc_attr($number); ?>"
+data-symbol="<?php echo esc_attr($symbol); ?>"
+>
+
+0
+
+</h2>
+
+<p class="abtxt">
+
+<?php the_title(); ?>
+
+</p>
+
+</div>
+
+<?php
+
+endwhile;
+
+wp_reset_postdata();
+
+endif;
+
+?>
+
+</div>
+
+</div>
+
+<div class="col-lg-6">
+
+<?php
+
+echo wp_get_attachment_image(
+
+get_theme_mod('about_intro_image'),
+
+'large',
+
+false,
+
+array(
+
+'class'=>'img-fluid rounded',
+
+'data-aos'=>'fade-up'
+
+)
+
+);
+
+?>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!--intro section ends -->
   <section class="partner-section">
 
     <div class="overlay"></div>
