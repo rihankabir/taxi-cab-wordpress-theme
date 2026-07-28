@@ -944,13 +944,7 @@ $wp_customize->add_setting(
         'sanitize_callback' => 'sanitize_text_field',
     )
 );
-$wp_customize->add_setting(
-    'about_intro_heading',
-    array(
-        'default' => 'WHO WE ARE',
-        'sanitize_callback' => 'sanitize_text_field',
-    )
-);
+
 $wp_customize->add_control(
     'about_intro_heading',
     array(
