@@ -937,6 +937,7 @@ $wp_customize->add_section(
         'priority' => 2,
     )
 );
+
 }
 
 add_action(
