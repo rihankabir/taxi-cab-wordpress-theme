@@ -77,14 +77,27 @@ get_theme_mod(
 
 <h1 class="text-start mb-4">
 
-<?php
-echo esc_html(
-get_theme_mod(
-'about_intro_heading',
-'WHO WE ARE'
-)
-);
-?>
+    <span class="YELLO">
+
+        <?php
+        echo esc_html(
+            get_theme_mod(
+                'about_intro_yellow_text',
+                'WHO'
+            )
+        );
+        ?>
+
+    </span>
+
+    <?php
+    echo esc_html(
+        get_theme_mod(
+            'about_intro_heading',
+            'WE ARE'
+        )
+    );
+    ?>
 
 </h1>
 
