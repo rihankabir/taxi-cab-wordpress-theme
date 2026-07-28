@@ -930,6 +930,13 @@ $wp_customize->add_control(
     )
 
 );
+$wp_customize->add_section(
+    'about_intro_section',
+    array(
+        'title'    => __('About Intro Section', 'taxi-cab'),
+        'priority' => 2,
+    )
+);
 }
 
 add_action(
