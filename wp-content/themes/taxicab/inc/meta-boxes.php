@@ -930,3 +930,27 @@ add_action(
 'save_post',
 'taxi_cab_save_brand'
 );
+function taxi_cab_about_counter_meta_box() {
+
+    add_meta_box(
+
+        'about_counter_details',
+
+        'Counter Details',
+
+        'taxi_cab_about_counter_callback',
+
+        'about_counter',
+
+        'normal',
+
+        'high'
+
+    );
+
+}
+
+add_action(
+    'add_meta_boxes',
+    'taxi_cab_about_counter_meta_box'
+);
