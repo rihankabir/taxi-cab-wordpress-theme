@@ -966,6 +966,14 @@ $wp_customize->add_setting(
         'sanitize_callback' => 'sanitize_textarea_field',
     )
 );
+$wp_customize->add_control(
+    'about_intro_description',
+    array(
+        'label'   => 'Description',
+        'section' => 'about_intro_section',
+        'type'    => 'textarea',
+    )
+);
 }
 
 add_action(
