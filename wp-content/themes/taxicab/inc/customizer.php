@@ -974,6 +974,13 @@ $wp_customize->add_control(
         'type'    => 'textarea',
     )
 );
+$wp_customize->add_setting(
+    'about_intro_image',
+    array(
+        'sanitize_callback' => 'absint',
+    )
+);
+
 }
 
 add_action(
