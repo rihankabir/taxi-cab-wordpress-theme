@@ -980,7 +980,17 @@ $wp_customize->add_setting(
         'sanitize_callback' => 'absint',
     )
 );
-
+$wp_customize->add_control(
+    new WP_Customize_Media_Control(
+        $wp_customize,
+        'about_intro_image',
+        array(
+            'label' => 'Right Image',
+            'section' => 'about_intro_section',
+            'mime_type' => 'image',
+        )
+    )
+);
 }
 
 add_action(
