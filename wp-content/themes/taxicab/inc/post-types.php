@@ -284,4 +284,56 @@ add_action(
     'taxi_cab_brand_post_type'
 );
 ?>
+<?php
 
+function taxi_cab_about_counter_cpt() {
+
+    $labels = array(
+        'name'               => 'About Counters',
+        'singular_name'      => 'About Counter',
+        'add_new'            => 'Add New',
+        'add_new_item'       => 'Add New Counter',
+        'edit_item'          => 'Edit Counter',
+        'new_item'           => 'New Counter',
+        'view_item'          => 'View Counter',
+        'search_items'       => 'Search Counter',
+        'not_found'          => 'No Counter Found',
+        'menu_name'          => 'About Counters',
+    );
+
+    $args = array(
+
+        'labels'             => $labels,
+
+        'public'             => true,
+
+        'show_in_menu'       => true,
+
+        'menu_position'      => 26,
+
+        'menu_icon'          => 'dashicons-chart-bar',
+
+        'supports'           => array(
+            'title',
+            'page-attributes'
+        ),
+
+        'has_archive'        => false,
+
+        'publicly_queryable' => false,
+
+        'show_ui'            => true,
+
+    );
+
+    register_post_type(
+        'about_counter',
+        $args
+    );
+
+}
+
+add_action(
+    'init',
+    'taxi_cab_about_counter_cpt'
+);
