@@ -350,7 +350,6 @@ get_theme_mod(
 
             </div>
 
-            <!-- Item -->
 
             
             <!-- Item -->
