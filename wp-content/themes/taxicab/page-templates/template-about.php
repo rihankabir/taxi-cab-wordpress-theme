@@ -403,28 +403,7 @@ get_theme_mod(
 
             <!-- Item -->
 
-            <div class="testimonial_item">
-
-                <div class="testimonial_img">
-                    <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=200" alt="">
-                </div>
-
-                <h4>David Smith</h4>
-
-                <div class="rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                </div>
-
-                <p>
-                    "Great experience! Fast pickup, safe driving and very polite
-                    staff. I will definitely book again."
-                </p>
-
-            </div>
+            
 
         </div>
 
