@@ -324,38 +324,119 @@ get_theme_mod(
 
         <div class="owl-carousel testimonial_slider">
 
-            <!-- Item -->
+<?php
 
-            <div class="testimonial_item">
+$testimonial = new WP_Query(
 
-                <div class="testimonial_img">
-                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200" alt="">
-                </div>
+array(
 
-                <h4>Stefy Graffi</h4>
+'post_type'=>'testimonial',
 
-                <div class="rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                </div>
+'posts_per_page'=>-1,
 
-                <p>
-                    "Excellent taxi service! The driver arrived on time, the
-                    vehicle was spotless, and the ride was smooth and
-                    comfortable. Highly recommended!"
-                </p>
+'orderby'=>'menu_order',
 
-            </div>
+'order'=>'ASC'
 
+)
 
-            
-            <!-- Item -->
+);
 
+if($testimonial->have_posts()) :
 
-            <!-- Item -->
+while($testimonial->have_posts()) :
+
+$testimonial->the_post();
+
+$rating = get_post_meta(
+
+get_the_ID(),
+
+'_testimonial_rating',
+
+true
+
+);
+
+?>
+
+<div class="testimonial_item">
+
+<div class="testimonial_img">
+
+<?php
+
+the_post_thumbnail(
+
+'thumbnail',
+
+array(
+
+'class'=>'img-fluid rounded-circle'
+
+)
+
+);
+
+?>
+
+</div>
+
+<h4>
+
+<?php the_title(); ?>
+
+</h4>
+
+<div class="rating">
+
+<?php
+
+for($i=1;$i<=5;$i++) :
+
+if($i <= $rating){
+
+?>
+
+<i class="fas fa-star"></i>
+
+<?php
+
+}else{
+
+?>
+
+<i class="far fa-star"></i>
+
+<?php
+
+}
+
+endfor;
+
+?>
+
+</div>
+
+<p>
+
+<?php the_content(); ?>
+
+</p>
+
+</div>
+
+<?php
+
+endwhile;
+
+wp_reset_postdata();
+
+endif;
+
+?>
+
+</div>
 
             
 
