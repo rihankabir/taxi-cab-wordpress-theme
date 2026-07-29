@@ -1182,3 +1182,58 @@ add_action(
     'save_post_about_partner',
     'taxi_cab_save_about_partner'
 );
+
+function taxi_cab_about_testimonial_meta_box() {
+
+    add_meta_box(
+        'testimonial_rating',
+        'Testimonial Rating',
+        'taxi_cab_testimonial_rating_callback',
+        'testimonial',
+        'side',
+        'default'
+    );
+
+}
+
+add_action(
+    'add_meta_boxes',
+    'taxi_cab_about_testimonial_meta_box'
+);
+
+function taxi_cab_testimonial_rating_callback( $post ) {
+
+    wp_nonce_field(
+        'testimonial_rating_nonce',
+        'testimonial_rating_nonce'
+    );
+
+    $rating = get_post_meta(
+        $post->ID,
+        '_testimonial_rating',
+        true
+    );
+
+?>
+
+<select name="testimonial_rating" style="width:100%;">
+
+<?php
+
+for ( $i = 5; $i >= 1; $i-- ) :
+
+?>
+
+<option value="<?php echo $i; ?>" <?php selected( $rating, $i ); ?>>
+
+<?php echo $i; ?> Star
+
+</option>
+
+<?php endfor; ?>
+
+</select>
+
+<?php
+
+}
