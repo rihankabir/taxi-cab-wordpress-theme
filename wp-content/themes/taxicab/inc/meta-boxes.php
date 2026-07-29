@@ -1085,3 +1085,55 @@ add_action(
     'add_meta_boxes',
     'taxi_cab_about_partner_meta_box'
 );
+function taxi_cab_about_partner_callback( $post ) {
+
+    wp_nonce_field(
+        'about_partner_nonce',
+        'about_partner_nonce'
+    );
+
+    $icon = get_post_meta(
+        $post->ID,
+        '_about_partner_icon',
+        true
+    );
+?>
+
+<p>
+
+<label><strong>Font Awesome Icon Class</strong></label>
+
+<input
+type="text"
+name="about_partner_icon"
+value="<?php echo esc_attr( $icon ); ?>"
+style="width:100%;"
+placeholder="fa-solid fa-taxi">
+
+</p>
+
+<p>
+
+Examples:
+
+<br>
+
+fa-solid fa-taxi
+
+<br>
+
+fa-solid fa-plane
+
+<br>
+
+fa-solid fa-car-side
+
+<br>
+
+fa-solid fa-route
+
+</p>
+
+<?php
+
+}
