@@ -1137,3 +1137,48 @@ fa-solid fa-route
 <?php
 
 }
+function taxi_cab_save_about_partner( $post_id ) {
+
+    if ( ! isset( $_POST['about_partner_nonce'] ) ) {
+
+        return;
+
+    }
+
+    if ( ! wp_verify_nonce(
+        $_POST['about_partner_nonce'],
+        'about_partner_nonce'
+    ) ) {
+
+        return;
+
+    }
+
+    if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+
+        return;
+
+    }
+
+    if ( isset( $_POST['about_partner_icon'] ) ) {
+
+        update_post_meta(
+
+            $post_id,
+
+            '_about_partner_icon',
+
+            sanitize_text_field(
+                $_POST['about_partner_icon']
+            )
+
+        );
+
+    }
+
+}
+
+add_action(
+    'save_post_about_partner',
+    'taxi_cab_save_about_partner'
+);
