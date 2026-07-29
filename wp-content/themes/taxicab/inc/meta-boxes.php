@@ -1237,3 +1237,51 @@ for ( $i = 5; $i >= 1; $i-- ) :
 <?php
 
 }
+function taxi_cab_save_testimonial_rating( $post_id ) {
+
+    if ( ! isset( $_POST['testimonial_rating_nonce'] ) ) {
+
+        return;
+
+    }
+
+    if ( ! wp_verify_nonce(
+
+        $_POST['testimonial_rating_nonce'],
+
+        'testimonial_rating_nonce'
+
+    ) ) {
+
+        return;
+
+    }
+
+    if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+
+        return;
+
+    }
+
+    if ( isset( $_POST['testimonial_rating'] ) ) {
+
+        update_post_meta(
+
+            $post_id,
+
+            '_testimonial_rating',
+
+            sanitize_text_field(
+                $_POST['testimonial_rating']
+            )
+
+        );
+
+    }
+
+}
+
+add_action(
+    'save_post_testimonial',
+    'taxi_cab_save_testimonial_rating'
+);
