@@ -219,45 +219,7 @@ array(
 <!--partner section starts -->
 
 
-  <section class ="partner-section">
-
-    <div class="overlay"></div>
-
-    <div class="container">
-
-        <div class="row justify-content-center align-items-center g-4">
-<div class="col-lg col-md-4 col-6 text-center">
-    <img src="https://cdn-icons-png.flaticon.com/512/3097/3097144.png" class="partner-logo img-fluid" alt="Taxi Partner">
-</div>
-
-<div class="col-lg col-md-4 col-6 text-center">
-    <img src="https://cdn-icons-png.flaticon.com/512/744/744502.png" class="partner-logo img-fluid" alt="Ride Partner">
-</div>
-
-<div class="col-lg col-md-4 col-6 text-center">
-    <img src="https://cdn-icons-png.flaticon.com/512/2972/2972215.png" class="partner-logo img-fluid" alt="Cab Company">
-</div>
-
-<div class="col-lg col-md-4 col-6 text-center">
-    <img src="https://cdn-icons-png.flaticon.com/512/854/854894.png" class="partner-logo img-fluid" alt="Airport Transfer">
-</div>
-
-<div class="col-lg col-md-4 col-6 text-center">
-    <img src="https://cdn-icons-png.flaticon.com/512/3202/3202926.png" class="partner-logo img-fluid" alt="Luxury Car">
-</div>
-            
-           
-
-           
-            
-
-            
-
-        </div>
-
-    </div>
-
-</section>
+  
 <!-- partner section ends-->
 <!--=============================
     TESTIMONIAL AREA START
