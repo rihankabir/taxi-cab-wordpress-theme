@@ -352,54 +352,9 @@ get_theme_mod(
 
             <!-- Item -->
 
-            <div class="testimonial_item">
-
-                <div class="testimonial_img">
-                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200" alt="">
-                </div>
-
-                <h4>James Peter</h4>
-
-                <div class="rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                </div>
-
-                <p>
-                    "Booking was super easy, the fare was affordable and the
-                    driver was very professional. Definitely my favorite taxi
-                    company."
-                </p>
-
-            </div>
-
+            
             <!-- Item -->
 
-            <div class="testimonial_item">
-
-                <div class="testimonial_img">
-                    <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=200" alt="">
-                </div>
-
-                <h4>Sarah Johnson</h4>
-
-                <div class="rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-
-                <p>
-                    "Friendly driver, clean cab and excellent customer service.
-                    I use this taxi every week for my office commute."
-                </p>
-
-            </div>
 
             <!-- Item -->
 
