@@ -284,7 +284,21 @@ array(
 
             <div class="col-lg-6">
                 <div class="section_heading">
-                    <h2>Testimonials</h2>
+                    <h2><?php
+
+echo esc_html(
+
+get_theme_mod(
+
+'testimonial_heading',
+
+'Testimonials'
+
+)
+
+);
+
+?></h2>
 
                     <div class="heading_line">
                         <span></span>
