@@ -386,11 +386,11 @@ add_action(
 );
 
 
-function taxi_cab_testimonial_cpt() {
+function taxi_cab_about_testimonial_cpt() {
 
     $labels = array(
-        'name'               => 'Testimonials',
-        'singular_name'      => 'Testimonial',
+        'name'               => 'About Testimonials',
+        'singular_name'      => 'About Testimonial',
         'add_new_item'       => 'Add New Testimonial',
         'edit_item'          => 'Edit Testimonial',
         'all_items'          => 'Testimonials',
@@ -426,7 +426,7 @@ function taxi_cab_testimonial_cpt() {
 
     register_post_type(
 
-        'testimonial',
+        'about_testimonial',
 
         $args
 
@@ -436,5 +436,5 @@ function taxi_cab_testimonial_cpt() {
 
 add_action(
     'init',
-    'taxi_cab_testimonial_cpt'
+    'taxi_cab_about_testimonial_cpt'
 );
