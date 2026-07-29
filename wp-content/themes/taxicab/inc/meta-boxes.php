@@ -1068,3 +1068,20 @@ add_action(
     'save_post_about_counter',
     'taxi_cab_save_about_counter'
 );
+function taxi_cab_about_partner_meta_box() {
+
+    add_meta_box(
+        'about_partner_icon',
+        'Partner Icon',
+        'taxi_cab_about_partner_callback',
+        'about_partner',
+        'normal',
+        'high'
+    );
+
+}
+
+add_action(
+    'add_meta_boxes',
+    'taxi_cab_about_partner_meta_box'
+);
