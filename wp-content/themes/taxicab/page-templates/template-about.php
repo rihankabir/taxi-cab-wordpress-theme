@@ -217,7 +217,60 @@ array(
 <!--intro section ends -->
 
 <!--partner section starts -->
+<section class="partner-section">
 
+    <div class="overlay"></div>
+
+    <div class="container">
+
+        <div class="row justify-content-center align-items-center g-4">
+
+            <?php
+
+            $partners = new WP_Query(
+                array(
+                    'post_type'      => 'about_partner',
+                    'posts_per_page' => -1,
+                    'orderby'        => 'menu_order',
+                    'order'          => 'ASC'
+                )
+            );
+
+            if ( $partners->have_posts() ) :
+
+                while ( $partners->have_posts() ) :
+
+                    $partners->the_post();
+
+                    $icon = get_post_meta(
+                        get_the_ID(),
+                        '_about_partner_icon',
+                        true
+                    );
+
+            ?>
+
+            <div class="col-lg col-md-4 col-6 text-center">
+
+                <i class="<?php echo esc_attr( $icon ); ?> partner-logo"></i>
+
+            </div>
+
+            <?php
+
+                endwhile;
+
+                wp_reset_postdata();
+
+            endif;
+
+            ?>
+
+        </div>
+
+    </div>
+
+</section>
 
   
 <!-- partner section ends-->
