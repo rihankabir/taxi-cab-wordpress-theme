@@ -368,7 +368,6 @@ function taxi_cab_about_partner_cpt() {
 
         'supports' => array(
             'title',
-            'thumbnail',
             'page-attributes'
         )
 
