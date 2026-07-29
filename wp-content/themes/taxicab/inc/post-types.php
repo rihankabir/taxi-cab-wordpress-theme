@@ -384,3 +384,57 @@ add_action(
     'init',
     'taxi_cab_about_partner_cpt'
 );
+
+
+function taxi_cab_testimonial_cpt() {
+
+    $labels = array(
+        'name'               => 'Testimonials',
+        'singular_name'      => 'Testimonial',
+        'add_new_item'       => 'Add New Testimonial',
+        'edit_item'          => 'Edit Testimonial',
+        'all_items'          => 'Testimonials',
+        'menu_name'          => 'Testimonials',
+    );
+
+    $args = array(
+
+        'labels' => $labels,
+
+        'public' => true,
+
+        'show_ui' => true,
+
+        'show_in_menu' => true,
+
+        'publicly_queryable' => false,
+
+        'has_archive' => false,
+
+        'menu_icon' => 'dashicons-format-quote',
+
+        'supports' => array(
+
+            'title',
+            'editor',
+            'thumbnail',
+            'page-attributes'
+
+        )
+
+    );
+
+    register_post_type(
+
+        'testimonial',
+
+        $args
+
+    );
+
+}
+
+add_action(
+    'init',
+    'taxi_cab_testimonial_cpt'
+);
