@@ -1087,6 +1087,35 @@ $wp_customize->add_control(
     )
 
 );
+$wp_customize->add_setting(
+
+    'about_driver_description',
+
+    array(
+
+        'default' => 'Meet our professional and experienced drivers committed to providing a safe, comfortable, and reliable journey every time.',
+
+        'sanitize_callback' => 'sanitize_textarea_field',
+
+    )
+
+);
+
+$wp_customize->add_control(
+
+    'about_driver_description',
+
+    array(
+
+        'label'   => 'Description',
+
+        'section' => 'about_driver_section',
+
+        'type'    => 'textarea',
+
+    )
+
+);
 }
 
 add_action(
