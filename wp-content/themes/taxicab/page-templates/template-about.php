@@ -468,8 +468,14 @@ echo esc_html(
             </div>
 
             <p>
-                Meet our professional and experienced drivers committed to
-                providing a safe, comfortable, and reliable journey every time.
+               <?php
+echo esc_html(
+    get_theme_mod(
+        'about_driver_description',
+        'Meet our professional and experienced drivers committed to providing a safe, comfortable, and reliable journey every time.'
+    )
+);
+?>
             </p>
 
         </div>
