@@ -1188,8 +1188,8 @@ function taxi_cab_about_testimonial_meta_box() {
     add_meta_box(
         'testimonial_rating',
         'Testimonial Rating',
-        'taxi_cab_testimonial_rating_callback',
-        'testimonial',
+        'taxi_cab_about_testimonial_rating_callback',
+        'about_testimonial',
         'side',
         'default'
     );
@@ -1201,7 +1201,7 @@ add_action(
     'taxi_cab_about_testimonial_meta_box'
 );
 
-function taxi_cab_testimonial_rating_callback( $post ) {
+function taxi_cab_about_testimonial_rating_callback( $post ) {
 
     wp_nonce_field(
         'testimonial_rating_nonce',
@@ -1237,7 +1237,7 @@ for ( $i = 5; $i >= 1; $i-- ) :
 <?php
 
 }
-function taxi_cab_save_testimonial_rating( $post_id ) {
+function taxi_cab_save_about_testimonial_rating( $post_id ) {
 
     if ( ! isset( $_POST['testimonial_rating_nonce'] ) ) {
 
@@ -1282,6 +1282,6 @@ function taxi_cab_save_testimonial_rating( $post_id ) {
 }
 
 add_action(
-    'save_post_testimonial',
-    'taxi_cab_save_testimonial_rating'
+    'save_post_about_testimonial',
+    'taxi_cab_save_about_testimonial_rating'
 );
