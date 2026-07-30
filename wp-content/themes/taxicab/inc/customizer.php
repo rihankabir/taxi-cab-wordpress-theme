@@ -1129,6 +1129,39 @@ $wp_customize->add_section(
     )
 
 );
+$wp_customize->add_setting(
+
+    'service_banner_image',
+
+    array(
+
+        'sanitize_callback' => 'absint',
+
+    )
+
+);
+
+$wp_customize->add_control(
+
+    new WP_Customize_Media_Control(
+
+        $wp_customize,
+
+        'service_banner_image',
+
+        array(
+
+            'label'      => 'Banner Background Image',
+
+            'section'    => 'service_breadcrumb_section',
+
+            'mime_type'  => 'image',
+
+        )
+
+    )
+
+);
 }
 
 add_action(
