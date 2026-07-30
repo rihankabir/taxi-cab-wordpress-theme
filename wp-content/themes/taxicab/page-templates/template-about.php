@@ -514,94 +514,11 @@ echo esc_html(
 
             <!-- Driver -->
 
-            <div class="col-lg-3 col-md-6">
-
-                <div class="driver-box">
-
-                    <div class="driver-img">
-
-                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=700" alt="">
-
-                        <div class="driver-overlay">
-
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-
-                        </div>
-
-                    </div>
-
-                    <h4>Paul Heyman</h4>
-
-                    <span>Van Driver</span>
-
-                </div>
-
-            </div>
+            
 
             <!-- Driver -->
 
-            <div class="col-lg-3 col-md-6">
-
-                <div class="driver-box">
-
-                    <div class="driver-img">
-
-                        <img src="https://images.unsplash.com/photo-1504257432389-52343af06ae3?w=700" alt="">
-
-                        <div class="driver-overlay">
-
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-
-                        </div>
-
-                    </div>
-
-                    <h4>Dwayne Johnson</h4>
-
-                    <span>Limo Driver</span>
-
-                </div>
-
-            </div>
-
-            <!-- Driver -->
-
-            <div class="col-lg-3 col-md-6">
-
-                <div class="driver-box">
-
-                    <div class="driver-img">
-
-                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=700" alt="">
-
-                        <div class="driver-overlay">
-
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-
-                        </div>
-
-                    </div>
-
-                    <h4>Fernandez</h4>
-
-                    <span>SUV Driver</span>
-
-                </div>
-
-            </div>
-
+            
         </div>
 
     </div>
