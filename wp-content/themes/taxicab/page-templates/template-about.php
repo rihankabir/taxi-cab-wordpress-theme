@@ -444,6 +444,7 @@ endif;
 
     </div>
 </section>
+<!--drivers section starts-->
 <section class="drivers-section py-5">
 
     <div class="container">
@@ -592,6 +593,8 @@ endif;
     </div>
 
 </section>
+
+<!--drivers section ends-->
 
 <section class="feature-area">
 
