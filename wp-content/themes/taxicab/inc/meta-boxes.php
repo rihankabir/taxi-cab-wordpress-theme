@@ -1285,3 +1285,28 @@ add_action(
     'save_post_about_testimonial',
     'taxi_cab_save_about_testimonial_rating'
 );
+
+function taxi_cab_about_driver_meta_box() {
+
+    add_meta_box(
+
+        'about_driver_details',
+
+        'Driver Details',
+
+        'taxi_cab_about_driver_callback',
+
+        'about_driver',
+
+        'normal',
+
+        'high'
+
+    );
+
+}
+
+add_action(
+    'add_meta_boxes',
+    'taxi_cab_about_driver_meta_box'
+);
