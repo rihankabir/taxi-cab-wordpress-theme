@@ -438,3 +438,56 @@ add_action(
     'init',
     'taxi_cab_about_testimonial_cpt'
 );
+function taxi_cab_about_driver_cpt() {
+
+    $labels = array(
+
+        'name'               => 'About Drivers',
+        'singular_name'      => 'About Driver',
+        'add_new_item'       => 'Add New Driver',
+        'edit_item'          => 'Edit Driver',
+        'all_items'          => 'All Drivers',
+        'menu_name'          => 'About Drivers',
+
+    );
+
+    $args = array(
+
+        'labels' => $labels,
+
+        'public' => true,
+
+        'show_ui' => true,
+
+        'show_in_menu' => true,
+
+        'publicly_queryable' => false,
+
+        'has_archive' => false,
+
+        'menu_icon' => 'dashicons-businessman',
+
+        'supports' => array(
+
+            'title',
+            'thumbnail',
+            'page-attributes'
+
+        )
+
+    );
+
+    register_post_type(
+
+        'about_driver',
+
+        $args
+
+    );
+
+}
+
+add_action(
+    'init',
+    'taxi_cab_about_driver_cpt'
+);
