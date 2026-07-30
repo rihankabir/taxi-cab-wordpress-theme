@@ -7,7 +7,7 @@ get_header();
 
 <!--navbar ends-->
 <!--breadcrumb section starts-->
-<section class="breadcumb-about service-breadcrumb">
+<section class="breadcumb-about service-breadcrumb"style="background-image:url('<?php echo esc_url( wp_get_attachment_image_url( get_theme_mod( 'service_banner_image' ), 'full' ) ); ?>');">
     <div class="container-fluid">
         <div class="row">
 <h2 class="text-center about-txt mt-5">Services</h2>
