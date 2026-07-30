@@ -1116,6 +1116,19 @@ $wp_customize->add_control(
     )
 
 );
+$wp_customize->add_section(
+
+    'service_breadcrumb_section',
+
+    array(
+
+        'title'    => __( 'Service Breadcrumb', 'taxi-cab' ),
+
+        'priority' => 90,
+
+    )
+
+);
 }
 
 add_action(
