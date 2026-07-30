@@ -451,7 +451,15 @@ endif;
 
         <div class="section-title text-center mb-5">
 
-            <h2>Our Drivers</h2>
+            <h2><h2>
+<?php
+echo esc_html(
+    get_theme_mod(
+        'about_driver_heading',
+        'Our Drivers'
+    )
+);
+?></h2>
 
             <div class="title-shape">
                 <span></span>
