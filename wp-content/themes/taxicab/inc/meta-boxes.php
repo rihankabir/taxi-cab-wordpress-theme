@@ -1374,3 +1374,50 @@ style="width:100%;">
 <?php
 
 }
+function taxi_cab_save_about_driver( $post_id ) {
+
+    if ( ! isset( $_POST['about_driver_nonce'] ) ) {
+        return;
+    }
+
+    if ( ! wp_verify_nonce(
+        $_POST['about_driver_nonce'],
+        'about_driver_nonce'
+    ) ) {
+        return;
+    }
+
+    if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+        return;
+    }
+
+    update_post_meta(
+        $post_id,
+        '_about_driver_designation',
+        sanitize_text_field( $_POST['about_driver_designation'] )
+    );
+
+    update_post_meta(
+        $post_id,
+        '_about_driver_facebook',
+        esc_url_raw( $_POST['about_driver_facebook'] )
+    );
+
+    update_post_meta(
+        $post_id,
+        '_about_driver_twitter',
+        esc_url_raw( $_POST['about_driver_twitter'] )
+    );
+
+    update_post_meta(
+        $post_id,
+        '_about_driver_linkedin',
+        esc_url_raw( $_POST['about_driver_linkedin'] )
+    );
+
+}
+
+add_action(
+    'save_post_about_driver',
+    'taxi_cab_save_about_driver'
+);
