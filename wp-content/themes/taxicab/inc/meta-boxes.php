@@ -1310,3 +1310,67 @@ add_action(
     'add_meta_boxes',
     'taxi_cab_about_driver_meta_box'
 );
+function taxi_cab_about_driver_callback( $post ) {
+
+    wp_nonce_field(
+        'about_driver_nonce',
+        'about_driver_nonce'
+    );
+
+    $designation = get_post_meta( $post->ID, '_about_driver_designation', true );
+    $facebook    = get_post_meta( $post->ID, '_about_driver_facebook', true );
+    $twitter     = get_post_meta( $post->ID, '_about_driver_twitter', true );
+    $linkedin    = get_post_meta( $post->ID, '_about_driver_linkedin', true );
+?>
+
+<p>
+
+<label>Designation</label>
+
+<input
+type="text"
+name="about_driver_designation"
+value="<?php echo esc_attr( $designation ); ?>"
+style="width:100%;">
+
+</p>
+
+<p>
+
+<label>Facebook URL</label>
+
+<input
+type="url"
+name="about_driver_facebook"
+value="<?php echo esc_attr( $facebook ); ?>"
+style="width:100%;">
+
+</p>
+
+<p>
+
+<label>Twitter URL</label>
+
+<input
+type="url"
+name="about_driver_twitter"
+value="<?php echo esc_attr( $twitter ); ?>"
+style="width:100%;">
+
+</p>
+
+<p>
+
+<label>LinkedIn URL</label>
+
+<input
+type="url"
+name="about_driver_linkedin"
+value="<?php echo esc_attr( $linkedin ); ?>"
+style="width:100%;">
+
+</p>
+
+<?php
+
+}
