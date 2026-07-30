@@ -10,7 +10,21 @@ get_header();
 <section class="breadcumb-about service-breadcrumb"style="background-image:url('<?php echo esc_url( wp_get_attachment_image_url( get_theme_mod( 'service_banner_image' ), 'full' ) ); ?>');">
     <div class="container-fluid">
         <div class="row">
-<h2 class="text-center about-txt mt-5">Services</h2>
+<h2 class="text-center about-txt mt-5"><?php
+
+echo esc_html(
+
+    get_theme_mod(
+
+        'service_banner_heading',
+
+        'Services'
+
+    )
+
+);
+
+?></h2>
         </div>
     </div>
 </section>
@@ -20,8 +34,8 @@ get_header();
             <div class="col-lg-12">
                 <nav class="custom-breadcrumb" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item text-decoration-none"><a href="index.html" class="text-decoration-none text-dark">Home</a></li>
-    <li class="breadcrumb-item active brtxt" aria-current="page">Service</li>
+    <li class="breadcrumb-item text-decoration-none"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="text-decoration-none text-dark">Home</a></li>
+    <li class="breadcrumb-item active brtxt" aria-current="page"> <?php the_title(); ?></li>
   </ol>
 </nav>
             </div>
