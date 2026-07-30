@@ -1045,6 +1045,19 @@ array(
 )
 
 );
+$wp_customize->add_section(
+
+    'about_driver_section',
+
+    array(
+
+        'title'    => __( 'About Driver Section', 'taxi-cab' ),
+
+        'priority' => 80,
+
+    )
+
+);
 }
 
 add_action(
