@@ -479,47 +479,135 @@ echo esc_html(
             </p>
 
         </div>
+<div class="row gy-5">
 
-        <div class="row gy-5">
+<?php
 
-            <!-- Driver -->
+$drivers = new WP_Query(
 
-            <div class="col-lg-3 col-md-6">
+    array(
 
-                <div class="driver-box">
+        'post_type'      => 'about_driver',
 
-                    <div class="driver-img">
+        'posts_per_page' => -1,
 
-                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=700" alt="">
+        'orderby'        => 'menu_order',
 
-                        <div class="driver-overlay">
+        'order'          => 'ASC'
 
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+    )
 
-                            <a href="#"><i class="fab fa-twitter"></i></a>
+);
 
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+if ( $drivers->have_posts() ) :
 
-                        </div>
+    while ( $drivers->have_posts() ) :
 
-                    </div>
+        $drivers->the_post();
 
-                    <h4>John Martin</h4>
+        $designation = get_post_meta(
+            get_the_ID(),
+            '_about_driver_designation',
+            true
+        );
 
-                    <span>Luxury Driver</span>
+        $facebook = get_post_meta(
+            get_the_ID(),
+            '_about_driver_facebook',
+            true
+        );
 
-                </div>
+        $twitter = get_post_meta(
+            get_the_ID(),
+            '_about_driver_twitter',
+            true
+        );
+
+        $linkedin = get_post_meta(
+            get_the_ID(),
+            '_about_driver_linkedin',
+            true
+        );
+
+?>
+
+<div class="col-lg-3 col-md-6">
+
+    <div class="driver-box">
+
+        <div class="driver-img">
+
+            <?php
+
+            the_post_thumbnail(
+
+                'large',
+
+                array(
+
+                    'class' => 'img-fluid'
+
+                )
+
+            );
+
+            ?>
+
+            <div class="driver-overlay">
+
+                <?php if ( $facebook ) : ?>
+
+                <a href="<?php echo esc_url( $facebook ); ?>">
+
+                    <i class="fab fa-facebook-f"></i>
+
+                </a>
+
+                <?php endif; ?>
+
+                <?php if ( $twitter ) : ?>
+
+                <a href="<?php echo esc_url( $twitter ); ?>">
+
+                    <i class="fab fa-twitter"></i>
+
+                </a>
+
+                <?php endif; ?>
+
+                <?php if ( $linkedin ) : ?>
+
+                <a href="<?php echo esc_url( $linkedin ); ?>">
+
+                    <i class="fab fa-linkedin-in"></i>
+
+                </a>
+
+                <?php endif; ?>
 
             </div>
 
-            <!-- Driver -->
-
-            
-
-            <!-- Driver -->
-
-            
         </div>
+
+        <h4><?php the_title(); ?></h4>
+
+        <span><?php echo esc_html( $designation ); ?></span>
+
+    </div>
+
+</div>
+
+<?php
+
+    endwhile;
+
+    wp_reset_postdata();
+
+endif;
+
+?>
+
+</div>
 
     </div>
 
