@@ -1058,6 +1058,35 @@ $wp_customize->add_section(
     )
 
 );
+$wp_customize->add_setting(
+
+    'about_driver_heading',
+
+    array(
+
+        'default'           => 'Our Drivers',
+
+        'sanitize_callback' => 'sanitize_text_field',
+
+    )
+
+);
+
+$wp_customize->add_control(
+
+    'about_driver_heading',
+
+    array(
+
+        'label'   => 'Heading',
+
+        'section' => 'about_driver_section',
+
+        'type'    => 'text',
+
+    )
+
+);
 }
 
 add_action(
