@@ -330,7 +330,7 @@ $testimonial = new WP_Query(
 
 array(
 
-'post_type'=>'testimonial',
+'post_type'=>'about_testimonial',
 
 'posts_per_page'=>-1,
 
