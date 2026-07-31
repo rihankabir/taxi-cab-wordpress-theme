@@ -1204,6 +1204,19 @@ $wp_customize->add_section(
     )
 
 );
+$wp_customize->add_setting(
+
+    'service_page_heading',
+
+    array(
+
+        'default'           => 'Our Services',
+
+        'sanitize_callback' => 'sanitize_text_field',
+
+    )
+
+);
 }
 
 add_action(
