@@ -1217,6 +1217,21 @@ $wp_customize->add_setting(
     )
 
 );
+$wp_customize->add_control(
+
+    'service_page_heading',
+
+    array(
+
+        'label'   => 'Heading',
+
+        'section' => 'service_page_services_section',
+
+        'type'    => 'text',
+
+    )
+
+);
 }
 
 add_action(
