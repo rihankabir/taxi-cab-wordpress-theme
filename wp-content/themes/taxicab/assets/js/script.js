@@ -327,7 +327,7 @@ if(name === ""){
 }
 if(subject === ""){
     $(".subjecterror").text("subject mandatory").css("color", "red");
-    isValid = false
+    isValid = false;
 }
 if(phonenumber.length < 5){
     $(".phonenumbererror").text("Enter a valid phonenumber").css("color", "red");

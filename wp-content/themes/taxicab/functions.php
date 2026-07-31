@@ -151,25 +151,27 @@ wp_enqueue_style( 'theme_css', get_template_directory_uri() );
 
 wp_enqueue_script( 'aos_js', get_template_directory_uri() . '/assets/aos/aos.js', array(), '1.0.0', true );
 wp_enqueue_script( 'bootstrap_js', get_template_directory_uri() . '/assets/js/bootstrap.bundle.min.js', array(), '5.0.3', true );
-   wp_enqueue_script( 'script_js', get_template_directory_uri() . '/assets/js/script.js', array(), '', true );
-}
-add_action('wp_enqueue_scripts','taxi_assets');
-
+wp_enqueue_script( 'script_js', get_template_directory_uri() . '/assets/js/script.js', array(), '', true );
 wp_localize_script(
 
-    'your-js-handle',
+    'script_js',
 
     'taxi_ajax',
 
     array(
 
-        'ajax_url' => admin_url( 'admin-ajax.php' ),
+        'ajax_url' => admin_url('admin-ajax.php'),
 
-        'nonce'    => wp_create_nonce( 'taxi_contact_nonce' )
+        'nonce' => wp_create_nonce('taxi_contact_nonce')
 
     )
 
 );
+}
+add_action('wp_enqueue_scripts','taxi_assets');
+
+
+ 
 add_action(
 
     'wp_ajax_nopriv_taxi_send_contact',
