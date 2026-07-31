@@ -155,3 +155,18 @@ wp_enqueue_script( 'bootstrap_js', get_template_directory_uri() . '/assets/js/bo
 }
 add_action('wp_enqueue_scripts','taxi_assets');
 
+wp_localize_script(
+
+    'your-js-handle',
+
+    'taxi_ajax',
+
+    array(
+
+        'ajax_url' => admin_url( 'admin-ajax.php' ),
+
+        'nonce'    => wp_create_nonce( 'taxi_contact_nonce' )
+
+    )
+
+);
