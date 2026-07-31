@@ -387,16 +387,161 @@ $mail = wp_mail(
     $headers
 
 );
-if ( $mail ) {
+$customer_subject = 'Thank you for contacting Taxi Cab';
+$customer_body = '
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+</head>
+
+<body style="margin:0;padding:0;background:#f4f4f4;">
+
+<table width="100%" cellpadding="0" cellspacing="0">
+
+<tr>
+
+<td align="center">
+
+<table width="650" cellpadding="0" cellspacing="0" style="background:#ffffff;font-family:Arial,sans-serif;">
+
+<tr>
+
+<td style="background:#ffcc00;padding:30px;text-align:center;">
+
+<h1 style="margin:0;color:#222;">
+
+Taxi Cab
+
+</h1>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="padding:40px;">
+
+<h2>
+
+Hello ' . esc_html( $name ) . ',
+
+</h2>
+
+<p>
+
+Thank you for contacting Taxi Cab.
+
+</p>
+
+<p>
+
+We have successfully received your message.
+
+</p>
+
+<p>
+
+Our support team will review your inquiry and get back to you as soon as possible.
+
+</p>
+
+<hr>
+
+<h3>Your Submission</h3>
+
+<p>
+
+<strong>Subject:</strong>
+
+' . esc_html( $subject ) . '
+
+</p>
+
+<p>
+
+<strong>Message:</strong>
+
+<br>
+
+' . nl2br( esc_html( $message ) ) . '
+
+</p>
+
+<br>
+
+<p>
+
+Thank you for choosing Taxi Cab.
+
+</p>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="background:#222;padding:20px;text-align:center;color:#ffffff;">
+
+© ' . date('Y') . ' Taxi Cab
+
+</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>
+
+';
+$customer_headers = array(
+
+'Content-Type: text/html; charset=UTF-8',
+
+'From: Taxi Cab <' . $admin_email . '>'
+
+);
+$customer_mail = wp_mail(
+
+$email,
+
+$customer_subject,
+
+$customer_body,
+
+$customer_headers
+
+);
+
+if ( $mail && $customer_mail ) {
 
     wp_send_json_success(
-        'Your message has been sent successfully.'
+
+        'Thank you! Your message has been sent successfully.'
+
     );
 
 } else {
 
     wp_send_json_error(
-        'Failed to send your message.'
+
+        'Sorry, something went wrong.'
+
     );
 
 }
