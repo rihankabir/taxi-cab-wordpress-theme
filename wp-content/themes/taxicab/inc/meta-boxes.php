@@ -1498,3 +1498,57 @@ style="width:100%;">
 <?php
 
 }
+function taxi_cab_save_service_meta( $post_id ) {
+
+    if ( ! isset( $_POST['service_meta_nonce'] ) ) {
+        return;
+    }
+
+    if ( ! wp_verify_nonce(
+        $_POST['service_meta_nonce'],
+        'service_meta_nonce'
+    ) ) {
+        return;
+    }
+
+    if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+        return;
+    }
+
+    update_post_meta(
+
+        $post_id,
+
+        '_service_icon',
+
+        sanitize_text_field(
+
+            $_POST['service_icon']
+
+        )
+
+    );
+
+    update_post_meta(
+
+        $post_id,
+
+        '_service_button_url',
+
+        esc_url_raw(
+
+            $_POST['service_button_url']
+
+        )
+
+    );
+
+}
+
+add_action(
+
+    'save_post_service_page_service',
+
+    'taxi_cab_save_service_meta'
+
+);
