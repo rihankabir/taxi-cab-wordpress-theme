@@ -1232,6 +1232,20 @@ $wp_customize->add_control(
     )
 
 );
+$wp_customize->add_setting(
+
+    'service_page_description',
+
+    array(
+
+        'default' => 'We provide reliable, safe, and affordable transportation services tailored to your travel needs.',
+
+        'sanitize_callback' => 'sanitize_textarea_field',
+
+    )
+
+);
+
 }
 
 add_action(
