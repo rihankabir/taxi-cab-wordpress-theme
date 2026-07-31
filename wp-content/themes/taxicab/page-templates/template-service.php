@@ -58,8 +58,7 @@ echo esc_html(
             </div>
 
             <p>
-                We provide reliable, safe, and affordable transportation
-                services tailored to your travel needs.
+                
             </p>
         </div>
 
