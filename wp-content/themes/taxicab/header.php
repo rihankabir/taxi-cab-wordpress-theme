@@ -163,7 +163,7 @@ array(
     <input type="text" id="searchInput" placeholder="Search..." />
 </div>
                 <!-- BOOK BUTTON -->
-                <a href="contact.html" class="book-btn">
+                <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="book-btn">
 
                     Book Now
 
