@@ -58,7 +58,21 @@ echo esc_html(
             </div>
 
             <p>
-                
+                <?php
+
+echo esc_html(
+
+get_theme_mod(
+
+'service_page_description',
+
+'We provide reliable, safe, and affordable transportation services tailored to your travel needs.'
+
+)
+
+);
+
+?>
             </p>
         </div>
 
