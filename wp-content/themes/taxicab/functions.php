@@ -244,17 +244,129 @@ $email_subject = 'New Contact Message - Taxi Cab';
 
 $email_body = '
 
-Name: ' . $name . '
+<!DOCTYPE html>
 
-Email: ' . $email . '
+<html>
 
-Phone: ' . $phone . '
+<head>
 
-Subject: ' . $subject . '
+<meta charset="UTF-8">
 
-Message:
+</head>
 
-' . $message;
+<body style="margin:0;padding:0;background:#f4f4f4;">
+
+<table width="100%" cellpadding="0" cellspacing="0">
+
+<tr>
+
+<td align="center">
+
+<table width="650" cellpadding="0" cellspacing="0" style="background:#ffffff;font-family:Arial,sans-serif;">
+
+<tr>
+
+<td style="background:#ffcc00;padding:25px;text-align:center;">
+
+<h1 style="margin:0;color:#222;">
+
+Taxi Cab
+
+</h1>
+
+<p style="margin-top:10px;color:#333;">
+
+New Contact Form Submission
+
+</p>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="padding:40px;">
+
+<h2 style="color:#222;">
+
+Customer Details
+
+</h2>
+
+<table width="100%" cellpadding="10" cellspacing="0" style="border-collapse:collapse;">
+
+<tr>
+
+<td><strong>Name</strong></td>
+
+<td>' . esc_html( $name ) . '</td>
+
+</tr>
+
+<tr>
+
+<td><strong>Email</strong></td>
+
+<td>' . esc_html( $email ) . '</td>
+
+</tr>
+
+<tr>
+
+<td><strong>Phone</strong></td>
+
+<td>' . esc_html( $phone ) . '</td>
+
+</tr>
+
+<tr>
+
+<td><strong>Subject</strong></td>
+
+<td>' . esc_html( $subject ) . '</td>
+
+</tr>
+
+<tr>
+
+<td valign="top"><strong>Message</strong></td>
+
+<td>' . nl2br( esc_html( $message ) ) . '</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="background:#222;color:#ffffff;text-align:center;padding:20px;">
+
+© ' . date('Y') . ' Taxi Cab.
+
+All Rights Reserved.
+
+</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>
+
+';
 $headers = array(
 
     'Content-Type: text/html; charset=UTF-8',
