@@ -1245,6 +1245,21 @@ $wp_customize->add_setting(
     )
 
 );
+$wp_customize->add_control(
+
+    'service_page_description',
+
+    array(
+
+        'label'   => 'Description',
+
+        'section' => 'service_page_services_section',
+
+        'type'    => 'textarea',
+
+    )
+
+);
 
 }
 
