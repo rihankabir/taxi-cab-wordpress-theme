@@ -1191,6 +1191,19 @@ $wp_customize->add_control(
     )
 
 );
+$wp_customize->add_section(
+
+    'service_page_services_section',
+
+    array(
+
+        'title'    => __( 'Service Page Services', 'taxi-cab' ),
+
+        'priority' => 100,
+
+    )
+
+);
 }
 
 add_action(
