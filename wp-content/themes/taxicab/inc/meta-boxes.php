@@ -1448,3 +1448,53 @@ add_action(
     'taxi_cab_service_meta_box'
 
 );
+function taxi_cab_service_meta_callback( $post ) {
+
+    wp_nonce_field(
+        'service_meta_nonce',
+        'service_meta_nonce'
+    );
+
+    $icon = get_post_meta(
+        $post->ID,
+        '_service_icon',
+        true
+    );
+
+    $url = get_post_meta(
+        $post->ID,
+        '_service_button_url',
+        true
+    );
+
+?>
+
+<p>
+
+<label>Font Awesome Icon</label>
+
+<input
+type="text"
+name="service_icon"
+value="<?php echo esc_attr( $icon ); ?>"
+style="width:100%;">
+
+<small>Example: fa-solid fa-plane</small>
+
+</p>
+
+<p>
+
+<label>Button URL</label>
+
+<input
+type="url"
+name="service_button_url"
+value="<?php echo esc_attr( $url ); ?>"
+style="width:100%;">
+
+</p>
+
+<?php
+
+}
