@@ -337,25 +337,68 @@ if(texts === ""){
     $(".texterror").text("Enter your texts").css("color", "red");
     isValid = false;
 }
-if(isValid){
-    $(".successmsg").text("Data Submitted Successfully").css("color", "green");
-    $("#name").val("");
-    $("#email").val("");
-    $("#phonenumber").val("");
+if (isValid) {
 
-     $("#subject").val("");
-     $("#texts").val("");
-     $(".texterror").text("");
-     $(".phonenumbererror").text("");
-     $(".subjecterror").text("");
-     $(".nameerror").text("");
-     $(".emailerror").text("");
+    $.ajax({
 
-     setTimeout(
-        () => {
-$(".successmsg").text("");
-        }, 2000
-     )
+        url: taxi_ajax.ajax_url,
+
+        type: "POST",
+
+        data: {
+
+            action: "taxi_send_contact",
+
+            nonce: taxi_ajax.nonce,
+
+            name: name,
+
+            email: email,
+
+            phone: phonenumber,
+
+            subject: subject,
+
+            message: texts
+
+        },
+
+        beforeSend: function () {
+
+            $(".successmsg")
+                .css("color", "#333")
+                .text("Sending...");
+
+        },
+
+        success: function (response) {
+
+            if (response.success) {
+
+                $(".successmsg")
+                    .css("color","green")
+                    .text(response.data);
+
+                $("#loginfrm")[0].reset();
+
+                $(".nameerror").text("");
+                $(".emailerror").text("");
+                $(".phonenumbererror").text("");
+                $(".subjecterror").text("");
+                $(".texterror").text("");
+
+            } else {
+
+                $(".successmsg")
+                    .css("color","red")
+                    .text(response.data);
+
+            }
+
+        }
+
+    });
+
 }
 
 } )
