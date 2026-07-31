@@ -75,7 +75,97 @@ get_theme_mod(
 ?>
             </p>
         </div>
+<div class="row g-4">
 
+<?php
+
+$services = new WP_Query(
+
+    array(
+
+        'post_type' => 'service_page_service',
+
+        'posts_per_page' => -1,
+
+        'orderby' => 'menu_order',
+
+        'order' => 'ASC'
+
+    )
+
+);
+
+if ( $services->have_posts() ) :
+
+while ( $services->have_posts() ) :
+
+$services->the_post();
+
+$icon = get_post_meta(
+
+    get_the_ID(),
+
+    '_service_icon',
+
+    true
+
+);
+
+$url = get_post_meta(
+
+    get_the_ID(),
+
+    '_service_button_url',
+
+    true
+
+);
+
+?>
+
+<div class="col-lg-4 col-md-6">
+
+<div class="service-box">
+
+<div class="icon">
+
+<i class="<?php echo esc_attr( $icon ); ?>"></i>
+
+</div>
+
+<h3>
+
+<?php the_title(); ?>
+
+</h3>
+
+<p>
+
+<?php the_content(); ?>
+
+</p>
+
+<a href="<?php echo esc_url( $url ); ?>" class="service-btn">
+
+<i class="fa-solid fa-arrow-right"></i>
+
+</a>
+
+</div>
+
+</div>
+
+<?php
+
+endwhile;
+
+wp_reset_postdata();
+
+endif;
+
+?>
+
+</div>
         
 
     </div>
