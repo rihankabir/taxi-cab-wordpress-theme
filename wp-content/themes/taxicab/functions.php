@@ -170,3 +170,18 @@ wp_localize_script(
     )
 
 );
+add_action(
+
+    'wp_ajax_nopriv_taxi_send_contact',
+
+    'taxi_send_contact'
+
+);
+
+add_action(
+
+    'wp_ajax_taxi_send_contact',
+
+    'taxi_send_contact'
+
+);
