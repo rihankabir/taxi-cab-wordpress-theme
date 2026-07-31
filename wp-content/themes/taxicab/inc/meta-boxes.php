@@ -1421,3 +1421,30 @@ add_action(
     'save_post_about_driver',
     'taxi_cab_save_about_driver'
 );
+function taxi_cab_service_meta_box() {
+
+    add_meta_box(
+
+        'service_meta',
+
+        'Service Details',
+
+        'taxi_cab_service_meta_callback',
+
+        'service_page_service',
+
+        'normal',
+
+        'high'
+
+    );
+
+}
+
+add_action(
+
+    'add_meta_boxes',
+
+    'taxi_cab_service_meta_box'
+
+);
