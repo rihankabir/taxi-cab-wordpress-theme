@@ -49,7 +49,7 @@ echo esc_html(
     <div class="container">
 
         <div class="section-title text-center mb-5">
-            <h2>Our Services</h2>
+            <h2><?php echo esc_html(get_theme_mod('service_page_heading','Our Services')); ?> </h2>
 
             <div class="title-divider">
                 <span></span>
