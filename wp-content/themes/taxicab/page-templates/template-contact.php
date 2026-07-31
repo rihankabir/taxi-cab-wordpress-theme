@@ -141,7 +141,10 @@ get_header(); ?>
                     <form id="loginfrm">
 
                         <div class="row">
-
+<?php wp_nonce_field(
+    'taxi_contact_nonce',
+    'taxi_contact_nonce'
+); ?>
                             <div class="col-md-6 mb-4">
                                 <input type="text" id="name" class="form-control cab_input" placeholder="Full Name">
                                 <p class="text-start nameerror"></p>
