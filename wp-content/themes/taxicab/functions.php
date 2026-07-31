@@ -369,9 +369,11 @@ All Rights Reserved.
 ';
 $headers = array(
 
-    'Content-Type: text/html; charset=UTF-8',
+'Content-Type: text/html; charset=UTF-8',
 
-    'Reply-To: ' . $name . ' <' . $email . '>'
+'From: Taxi Cab <' . $admin_email . '>',
+
+'Reply-To: ' . $name . ' <' . $email . '>'
 
 );
 $mail = wp_mail(
