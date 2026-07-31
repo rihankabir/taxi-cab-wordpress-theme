@@ -185,3 +185,105 @@ add_action(
     'taxi_send_contact'
 
 );
+function taxi_send_contact() {
+
+    // Verify nonce
+    check_ajax_referer(
+        'taxi_contact_nonce',
+        'nonce'
+    );
+
+    // Get form data
+    $name = sanitize_text_field(
+        $_POST['name']
+    );
+
+    $email = sanitize_email(
+        $_POST['email']
+    );
+
+    $phone = sanitize_text_field(
+        $_POST['phone']
+    );
+
+    $subject = sanitize_text_field(
+        $_POST['subject']
+    );
+
+    $message = sanitize_textarea_field(
+        $_POST['message']
+    );
+
+    // Validation
+    if (
+        empty( $name ) ||
+        empty( $email ) ||
+        empty( $phone ) ||
+        empty( $subject ) ||
+        empty( $message )
+    ) {
+
+        wp_send_json_error(
+            'All fields are required.'
+        );
+
+    }
+
+    if ( ! is_email( $email ) ) {
+
+        wp_send_json_error(
+            'Invalid email address.'
+        );
+
+    }
+$admin_email = get_option(
+    'admin_email'
+);
+
+$email_subject = 'New Contact Message - Taxi Cab';
+
+$email_body = '
+
+Name: ' . $name . '
+
+Email: ' . $email . '
+
+Phone: ' . $phone . '
+
+Subject: ' . $subject . '
+
+Message:
+
+' . $message;
+$headers = array(
+
+    'Content-Type: text/html; charset=UTF-8',
+
+    'Reply-To: ' . $name . ' <' . $email . '>'
+
+);
+$mail = wp_mail(
+
+    $admin_email,
+
+    $email_subject,
+
+    nl2br( $email_body ),
+
+    $headers
+
+);
+if ( $mail ) {
+
+    wp_send_json_success(
+        'Your message has been sent successfully.'
+    );
+
+} else {
+
+    wp_send_json_error(
+        'Failed to send your message.'
+    );
+
+}
+}
