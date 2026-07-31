@@ -491,3 +491,64 @@ add_action(
     'init',
     'taxi_cab_about_driver_cpt'
 );
+function taxi_cab_service_page_service_cpt() {
+
+    $labels = array(
+
+        'name' => 'Service Page Services',
+
+        'singular_name' => 'Service',
+
+        'menu_name' => 'Service Page Services',
+
+        'add_new_item' => 'Add New Service',
+
+        'edit_item' => 'Edit Service',
+
+    );
+
+    $args = array(
+
+        'labels' => $labels,
+
+        'public' => true,
+
+        'show_ui' => true,
+
+        'show_in_menu' => true,
+
+        'publicly_queryable' => false,
+
+        'has_archive' => false,
+
+        'menu_icon' => 'dashicons-admin-tools',
+
+        'supports' => array(
+
+            'title',
+
+            'editor',
+
+            'page-attributes'
+
+        )
+
+    );
+
+    register_post_type(
+
+        'service_page_service',
+
+        $args
+
+    );
+
+}
+
+add_action(
+
+    'init',
+
+    'taxi_cab_service_page_service_cpt'
+
+);
