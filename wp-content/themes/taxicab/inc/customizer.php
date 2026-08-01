@@ -1415,7 +1415,21 @@ $wp_customize->add_setting(
     )
 
 );
+$wp_customize->add_control(
 
+    'contact_heading',
+
+    array(
+
+        'label'   => 'Heading',
+
+        'section' => 'contact_information_section',
+
+        'type'    => 'text',
+
+    )
+
+);
 
 
 
