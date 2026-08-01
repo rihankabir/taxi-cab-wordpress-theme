@@ -1430,6 +1430,17 @@ $wp_customize->add_control(
     )
 
 );
+$wp_customize->add_setting(
+
+    'contact_description',
+
+    array(
+
+        'sanitize_callback' => 'sanitize_textarea_field',
+
+    )
+
+);
 
 
 
