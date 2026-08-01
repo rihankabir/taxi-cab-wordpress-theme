@@ -183,7 +183,7 @@ get_theme_mod(
 );
 
 ?></h4>
-                            <p><a href="tel:<?php echo esc_attr( get_theme_mod( 'contact_phone' ) ); ?>">
+                            <p><a href="tel:<?php echo esc_attr( get_theme_mod( 'contact_phone' ) ); ?>"class="text-decoration-none cphone">
 
 <?php
 
@@ -226,7 +226,7 @@ get_theme_mod(
 );
 
 ?></h4>
-                            <p><a href="mailto:<?php echo esc_attr( get_theme_mod( 'contact_email' ) ); ?>">
+                            <p><a href="mailto:<?php echo esc_attr( get_theme_mod( 'contact_email' ) ); ?>"class="text-decoration-none cphone">
 
 <?php
 

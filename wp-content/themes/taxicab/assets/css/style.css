@@ -1686,7 +1686,7 @@ font-size: 70px;
 .cab_info_item h4{
 
     margin-bottom:6px;
-    color:#223654;
+    color:#223654 !important;
     font-weight:600;
 
 }
@@ -1694,7 +1694,7 @@ font-size: 70px;
 .cab_info_item p{
 
     margin:0;
-    color:#666;
+    color:#666 !important;
 
 }
 
@@ -1723,6 +1723,9 @@ font-size: 70px;
 
     text-decoration:none;
 
+}
+.cphone{
+    color: #223654 !important;
 }
 
 .cab_social_area a:hover{
