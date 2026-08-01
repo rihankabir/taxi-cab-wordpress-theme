@@ -1318,6 +1318,22 @@ $wp_customize->add_setting(
     )
 
 );
+$wp_customize->add_control(
+
+    'contact_page_title',
+
+    array(
+
+        'label'   => 'Page Title',
+
+        'section' => 'contact_breadcrumb_section',
+
+        'type'    => 'text',
+
+    )
+
+);
+
 
 }
 
