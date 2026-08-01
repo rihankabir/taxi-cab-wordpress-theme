@@ -1511,6 +1511,36 @@ $wp_customize->add_control(
     )
 
 );
+$wp_customize->add_setting(
+
+    'contact_phone_title',
+
+    array(
+
+        'default'=>'Phone Number',
+
+        'sanitize_callback'=>'sanitize_text_field'
+
+    )
+
+);
+
+$wp_customize->add_control(
+
+    'contact_phone_title',
+
+    array(
+
+        'label'=>'Phone Title',
+
+        'section'=>'contact_information_section',
+
+        'type'=>'text'
+
+    )
+
+);
+
 
 
 
