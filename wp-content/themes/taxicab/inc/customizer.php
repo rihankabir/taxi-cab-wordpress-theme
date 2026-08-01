@@ -1346,6 +1346,21 @@ $wp_customize->add_setting(
     )
 
 );
+$wp_customize->add_control(
+
+    'contact_breadcrumb_home',
+
+    array(
+
+        'label'   => 'Home Text',
+
+        'section' => 'contact_breadcrumb_section',
+
+        'type'    => 'text',
+
+    )
+
+);
 
 
 }
