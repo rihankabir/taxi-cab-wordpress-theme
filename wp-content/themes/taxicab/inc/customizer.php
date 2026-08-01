@@ -1361,6 +1361,20 @@ $wp_customize->add_control(
     )
 
 );
+$wp_customize->add_setting(
+
+    'contact_breadcrumb_current',
+
+    array(
+
+        'default'           => 'Contact',
+
+        'sanitize_callback' => 'sanitize_text_field',
+
+    )
+
+);
+
 
 
 }
