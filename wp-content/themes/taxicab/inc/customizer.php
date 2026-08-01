@@ -1273,6 +1273,17 @@ $wp_customize->add_section(
     )
 
 );
+$wp_customize->add_setting(
+
+    'contact_banner_image',
+
+    array(
+
+        'sanitize_callback' => 'absint',
+
+    )
+
+);
 
 }
 
