@@ -1469,6 +1469,21 @@ $wp_customize->add_setting(
     )
 
 );
+$wp_customize->add_control(
+
+    'contact_address_title',
+
+    array(
+
+        'label'=>'Address Title',
+
+        'section'=>'contact_information_section',
+
+        'type'=>'text'
+
+    )
+
+);
 
 
 
