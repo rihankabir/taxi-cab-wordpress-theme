@@ -1389,6 +1389,19 @@ $wp_customize->add_control(
     )
 
 );
+$wp_customize->add_section(
+
+    'contact_information_section',
+
+    array(
+
+        'title'    => 'Contact Information',
+
+        'priority' => 91,
+
+    )
+
+);
 
 
 }
