@@ -1305,6 +1305,20 @@ $wp_customize->add_control(
     )
 
 );
+$wp_customize->add_setting(
+
+    'contact_page_title',
+
+    array(
+
+        'default'           => 'Contact',
+
+        'sanitize_callback' => 'sanitize_text_field',
+
+    )
+
+);
+
 }
 
 add_action(
