@@ -1402,6 +1402,21 @@ $wp_customize->add_section(
     )
 
 );
+$wp_customize->add_setting(
+
+    'contact_heading',
+
+    array(
+
+        'default' => 'Contact Us',
+
+        'sanitize_callback' => 'sanitize_text_field',
+
+    )
+
+);
+
+
 
 
 }
