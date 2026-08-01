@@ -5,10 +5,24 @@ Template Name: Contact Page
 get_header(); ?>
 <!--navbar ends-->
 <!--breadcrumb section starts-->
-<section class="breadcumb-about service-breadcrumb">
+<section class="breadcumb-about service-breadcrumb"style="background-image:url('<?php echo esc_url( wp_get_attachment_url( get_theme_mod( 'contact_banner_image' ) ) ); ?>');">
     <div class="container-fluid">
         <div class="row">
-<h2 class="text-center about-txt mt-5">Contact</h2>
+<h2 class="text-center about-txt mt-5"><?php
+
+echo esc_html(
+
+get_theme_mod(
+
+'contact_page_title',
+
+'Contact'
+
+)
+
+);
+
+?></h2>
         </div>
     </div>
 </section>
@@ -18,8 +32,22 @@ get_header(); ?>
             <div class="col-lg-12">
                 <nav class="custom-breadcrumb" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item text-decoration-none"><a href="index.html" class="text-decoration-none text-dark">Home</a></li>
-    <li class="breadcrumb-item active brtxt" aria-current="page">Contact</li>
+    <li class="breadcrumb-item text-decoration-none"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="text-decoration-none text-dark">Home</a></li>
+    <li class="breadcrumb-item active brtxt" aria-current="page"><?php
+
+echo esc_html(
+
+get_theme_mod(
+
+'contact_breadcrumb_current',
+
+'Contact'
+
+)
+
+);
+
+?></li>
   </ol>
 </nav>
             </div>
@@ -41,7 +69,21 @@ get_header(); ?>
 
         <div class="cab_contact_heading text-center mb-5">
 
-            <h2>Contact Us</h2>
+            <h2><?php
+
+echo esc_html(
+
+get_theme_mod(
+
+'contact_heading',
+
+'Contact Us'
+
+)
+
+);
+
+?></h2>
 
             <div class="cab_contact_shape">
                 <span></span>
@@ -50,8 +92,19 @@ get_header(); ?>
             </div>
 
             <p>
-                Have questions or need a ride? Our team is available 24/7.
-                Contact us anytime and we'll be happy to assist you.
+                <?php
+
+echo esc_html(
+
+get_theme_mod(
+
+'contact_description'
+
+)
+
+);
+
+?>
             </p>
 
         </div>
@@ -71,8 +124,39 @@ get_header(); ?>
                         </div>
 
                         <div>
-                            <h4>Office Address</h4>
-                            <p>56/Taylor Road, London, United Kingdom</p>
+                            <h4><?php
+
+echo esc_html(
+
+get_theme_mod(
+
+'contact_address_title',
+
+'Office Address'
+
+)
+
+);
+
+?></h4>
+                            <p><?php
+
+echo nl2br(
+
+esc_html(
+
+get_theme_mod(
+
+'contact_address'
+
+)
+
+)
+
+);
+
+?>
+</p>
                         </div>
 
                     </div>
@@ -84,8 +168,38 @@ get_header(); ?>
                         </div>
 
                         <div>
-                            <h4>Phone Number</h4>
-                            <p>+44 20 7946 0123</p>
+                            <h4><?php
+
+echo esc_html(
+
+get_theme_mod(
+
+'contact_phone_title',
+
+'Phone Number'
+
+)
+
+);
+
+?></h4>
+                            <p><a href="tel:<?php echo esc_attr( get_theme_mod( 'contact_phone' ) ); ?>">
+
+<?php
+
+echo esc_html(
+
+get_theme_mod(
+
+'contact_phone'
+
+)
+
+);
+
+?>
+
+</a></p>
                         </div>
 
                     </div>
@@ -97,8 +211,39 @@ get_header(); ?>
                         </div>
 
                         <div>
-                            <h4>Email Address</h4>
-                            <p> gettaxi@taxicab.co.uk</p>
+                            <h4><?php
+
+echo esc_html(
+
+get_theme_mod(
+
+'contact_email_title',
+
+'Email Address'
+
+)
+
+);
+
+?></h4>
+                            <p><a href="mailto:<?php echo esc_attr( get_theme_mod( 'contact_email' ) ); ?>">
+
+<?php
+
+echo esc_html(
+
+get_theme_mod(
+
+'contact_email'
+
+)
+
+);
+
+?>
+
+</a>
+</p>
                         </div>
 
                     </div>
@@ -110,21 +255,47 @@ get_header(); ?>
                         </div>
 
                         <div>
-                            <h4>Working Hours</h4>
-                            <p>Open 24 Hours - 7 Days a Week</p>
+                            <h4><?php
+
+echo esc_html(
+
+get_theme_mod(
+
+'contact_hours_title',
+
+'Working Hours'
+
+)
+
+);
+
+?></h4>
+                            <p><?php
+
+echo esc_html(
+
+get_theme_mod(
+
+'contact_hours'
+
+)
+
+);
+
+?></p>
                         </div>
 
                     </div>
 
                     <div class="cab_social_area">
 
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="<?php echo esc_url( get_theme_mod( 'contact_facebook' ) ); ?>"><i class="fab fa-facebook-f"></i></a>
 
-                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="<?php echo esc_url( get_theme_mod( 'contact_twitter' ) ); ?>"><i class="fab fa-twitter"></i></a>
 
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="<?php echo esc_url( get_theme_mod( 'contact_instagram' ) ); ?>"><i class="fab fa-instagram"></i></a>
 
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="<?php echo esc_url( get_theme_mod( 'contact_linkedin' ) ); ?>"><i class="fab fa-linkedin-in"></i></a>
 
                     </div>
 
@@ -200,15 +371,22 @@ get_header(); ?>
 </section>
 
 <section class="cab_map_section">
+<iframe
 
-     <iframe
-        src="https://maps.google.com/maps?q=London,%20United%20Kingdom&t=&z=12&ie=UTF8&iwloc=&output=embed"
-        width="100%"
-        height="450"
-        style="border:0;"
-        loading="lazy"
-        allowfullscreen>
-    </iframe>
+src="<?php echo esc_url( get_theme_mod( 'contact_map_url' ) ); ?>"
+
+width="100%"
+
+height="450"
+
+style="border:0;"
+
+loading="lazy"
+
+allowfullscreen>
+
+</iframe>
+     
 
 </section>
 
