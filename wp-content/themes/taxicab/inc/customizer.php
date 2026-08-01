@@ -1567,7 +1567,35 @@ $wp_customize->add_control(
     )
 
 );
+$wp_customize->add_setting(
 
+    'contact_email_title',
+
+    array(
+
+        'default'=>'Email Address',
+
+        'sanitize_callback'=>'sanitize_text_field'
+
+    )
+
+);
+
+$wp_customize->add_control(
+
+    'contact_email_title',
+
+    array(
+
+        'label'=>'Email Title',
+
+        'section'=>'contact_information_section',
+
+        'type'=>'text'
+
+    )
+
+);
 
 
 
