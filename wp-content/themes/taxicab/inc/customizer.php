@@ -1800,7 +1800,33 @@ $wp_customize->add_control(
     )
 
 );
+$wp_customize->add_setting(
 
+    'contact_map_url',
+
+    array(
+
+        'sanitize_callback'=>'esc_url_raw'
+
+    )
+
+);
+
+$wp_customize->add_control(
+
+    'contact_map_url',
+
+    array(
+
+        'label'=>'Google Map Embed URL',
+
+        'section'=>'contact_social_section',
+
+        'type'=>'url'
+
+    )
+
+);
 
 
 
