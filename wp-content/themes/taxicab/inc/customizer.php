@@ -1596,6 +1596,130 @@ $wp_customize->add_control(
     )
 
 );
+$wp_customize->add_setting(
+
+    'contact_email',
+
+    array(
+
+        'sanitize_callback'=>'sanitize_email'
+
+    )
+
+);
+
+$wp_customize->add_control(
+
+    'contact_email',
+
+    array(
+
+        'label'=>'Email',
+
+        'section'=>'contact_information_section',
+
+        'type'=>'email'
+
+    )
+
+);
+$wp_customize->add_setting(
+
+    'contact_hours_title',
+
+    array(
+
+        'default'=>'Working Hours',
+
+        'sanitize_callback'=>'sanitize_text_field'
+
+    )
+
+);
+
+$wp_customize->add_control(
+
+    'contact_hours_title',
+
+    array(
+
+        'label'=>'Working Hours Title',
+
+        'section'=>'contact_information_section',
+
+        'type'=>'text'
+
+    )
+
+);
+$wp_customize->add_setting(
+
+    'contact_hours',
+
+    array(
+
+        'sanitize_callback'=>'sanitize_text_field'
+
+    )
+
+);
+
+$wp_customize->add_control(
+
+    'contact_hours',
+
+    array(
+
+        'label'=>'Working Hours',
+
+        'section'=>'contact_information_section',
+
+        'type'=>'text'
+
+    )
+
+);
+$wp_customize->add_section(
+
+    'contact_social_section',
+
+    array(
+
+        'title'=>'Contact Social & Map',
+
+        'priority'=>92,
+
+    )
+
+);
+$wp_customize->add_setting(
+
+    'contact_facebook',
+
+    array(
+
+        'sanitize_callback'=>'esc_url_raw'
+
+    )
+
+);
+
+$wp_customize->add_control(
+
+    'contact_facebook',
+
+    array(
+
+        'label'=>'Facebook URL',
+
+        'section'=>'contact_social_section',
+
+        'type'=>'url'
+
+    )
+
+);
+
 
 
 
