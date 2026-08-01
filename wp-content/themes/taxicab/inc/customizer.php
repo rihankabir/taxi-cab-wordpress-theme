@@ -1484,6 +1484,33 @@ $wp_customize->add_control(
     )
 
 );
+$wp_customize->add_setting(
+
+    'contact_address',
+
+    array(
+
+        'sanitize_callback'=>'sanitize_textarea_field'
+
+    )
+
+);
+
+$wp_customize->add_control(
+
+    'contact_address',
+
+    array(
+
+        'label'=>'Address',
+
+        'section'=>'contact_information_section',
+
+        'type'=>'textarea'
+
+    )
+
+);
 
 
 
