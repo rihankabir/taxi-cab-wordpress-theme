@@ -1540,6 +1540,34 @@ $wp_customize->add_control(
     )
 
 );
+$wp_customize->add_setting(
+
+    'contact_phone',
+
+    array(
+
+        'sanitize_callback'=>'sanitize_text_field'
+
+    )
+
+);
+
+$wp_customize->add_control(
+
+    'contact_phone',
+
+    array(
+
+        'label'=>'Phone',
+
+        'section'=>'contact_information_section',
+
+        'type'=>'text'
+
+    )
+
+);
+
 
 
 
