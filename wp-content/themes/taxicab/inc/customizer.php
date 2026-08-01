@@ -1441,6 +1441,21 @@ $wp_customize->add_setting(
     )
 
 );
+$wp_customize->add_control(
+
+    'contact_description',
+
+    array(
+
+        'label'   => 'Description',
+
+        'section' => 'contact_information_section',
+
+        'type'    => 'textarea',
+
+    )
+
+);
 
 
 
