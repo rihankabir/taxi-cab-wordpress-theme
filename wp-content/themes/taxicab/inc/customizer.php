@@ -1284,7 +1284,27 @@ $wp_customize->add_setting(
     )
 
 );
+$wp_customize->add_control(
 
+    new WP_Customize_Media_Control(
+
+        $wp_customize,
+
+        'contact_banner_image',
+
+        array(
+
+            'label'    => 'Banner Image',
+
+            'section'  => 'contact_breadcrumb_section',
+
+            'mime_type'=> 'image',
+
+        )
+
+    )
+
+);
 }
 
 add_action(
