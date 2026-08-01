@@ -1719,6 +1719,89 @@ $wp_customize->add_control(
     )
 
 );
+$wp_customize->add_setting(
+
+    'contact_twitter',
+
+    array(
+
+        'sanitize_callback'=>'esc_url_raw'
+
+    )
+
+);
+
+$wp_customize->add_control(
+
+    'contact_twitter',
+
+    array(
+
+        'label'=>'Twitter URL',
+
+        'section'=>'contact_social_section',
+
+        'type'=>'url'
+
+    )
+
+);
+$wp_customize->add_setting(
+
+    'contact_instagram',
+
+    array(
+
+        'sanitize_callback'=>'esc_url_raw'
+
+    )
+
+);
+
+$wp_customize->add_control(
+
+    'contact_instagram',
+
+    array(
+
+        'label'=>'Instagram URL',
+
+        'section'=>'contact_social_section',
+
+        'type'=>'url'
+
+    )
+
+);
+$wp_customize->add_setting(
+
+    'contact_linkedin',
+
+    array(
+
+        'sanitize_callback'=>'esc_url_raw'
+
+    )
+
+);
+
+$wp_customize->add_control(
+
+    'contact_linkedin',
+
+    array(
+
+        'label'=>'Linkedin URL',
+
+        'section'=>'contact_social_section',
+
+        'type'=>'url'
+
+    )
+
+);
+
+
 
 
 
