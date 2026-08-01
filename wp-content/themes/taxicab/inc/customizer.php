@@ -1260,6 +1260,19 @@ $wp_customize->add_control(
     )
 
 );
+$wp_customize->add_section(
+
+    'contact_breadcrumb_section',
+
+    array(
+
+        'title'    => 'Contact Breadcrumb',
+
+        'priority' => 90,
+
+    )
+
+);
 
 }
 
